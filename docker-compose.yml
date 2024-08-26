@@ -1,6 +1,6 @@
 services:
   postgresql:
-    container_name: ms_pg_sql
+    container_name: mss_pg_sql
     image: postgres
     environment:
       POSTGRES_USER: alibou
@@ -15,7 +15,7 @@ services:
     restart: unless-stopped
 
   pgadmin:
-    container_name: ms_pgadmin
+    container_name: mss_pgadmin
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
@@ -37,9 +37,9 @@ services:
     networks:
       - microservices-net
 
-  mongodb:
+  mongo-db:
     image: mongo
-    container_name: mongo_db
+    container_name: mss_mongo_db
     ports:
       - 27017:27017
     volumes:
@@ -47,6 +47,8 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=alibou
       - MONGO_INITDB_ROOT_PASSWORD=alibou
+    networks:
+        - microservices-net
 
   mongo-express:
     image: mongo-express
@@ -57,7 +59,15 @@ services:
     environment:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=alibou
       - ME_CONFIG_MONGODB_ADMINPASSWORD=alibou
-      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_SERVER=mongo-db
+      - ME_CONFIG_MONGODB_URL=mongodb://mongo-db:27017
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      - ME_CONFIG_SITE_SESSIONSECRET=secret-klic-vytvorit-dle-uvazeni
+      - ME_CONFIG_BASICAUTH=true
+      - ME_CONFIG_SITE_AUTH_USERNAME=admin
+      - ME_CONFIG_SITE_AUTH_PASSWORD=Heslo1
+    networks:
+        - microservices-net
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
@@ -72,7 +82,7 @@ services:
       - microservices-net
   kafka:
     image: confluentinc/cp-kafka:latest
-    container_name: ms_kafka
+    container_name: mss_kafka
     ports:
       - "9092:9092"
     depends_on:
@@ -88,11 +98,13 @@ services:
       - microservices-net
 
   mail-dev:
-    container_name: ms-mail-dev
+    container_name: mss-mail-dev
     image: maildev/maildev
     ports:
       - 1080:1080
       - 1025:1025
+    networks:
+        - microservices-net
 
 networks:
   microservices-net:
