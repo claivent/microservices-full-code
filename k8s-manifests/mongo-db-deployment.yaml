@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-db
+  template:
+    metadata:
+      labels:
+        app: mongo-db
+    spec:
+      containers:
+      - env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          value: alibou
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          value: alibou
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        name: mongo-db
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - mountPath: /data
+          name: mongo-storage
+      volumes:
+      - name: mongo-storage
+        persistentVolumeClaim:
+          claimName: mongo-pvc

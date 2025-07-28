@@ -1,0 +1,28 @@
+### deployment.yaml (pro discovery-service v namespace `dev`)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discovery-service
+  namespace: dev
+  labels:
+    app: discovery-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: discovery-service
+  template:
+    metadata:
+      labels:
+        app: discovery-service
+    spec:
+      containers:
+        - name: discovery-service
+          image: claivent/micro:discovery-service-0.1.1
+          ports:
+            - containerPort: 8761
+          env:
+            - name: SPRING_CONFIG_IMPORT
+              value: "optional:configserver:http://localhost:8888,optional:configserver:http://config-server.dev.svc.cluster.local:8888"
+
+---
