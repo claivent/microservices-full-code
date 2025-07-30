@@ -1,4 +1,4 @@
-create table if not exists category
+wcreate table if not exists category
 (
     id          integer not null
         primary key,

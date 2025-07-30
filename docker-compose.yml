@@ -1,7 +1,7 @@
 services:
   postgresql:
     container_name: mss_pg_sql
-    image: postgres
+    image: postgres:16.8-alpine
     environment:
       POSTGRES_USER: alibou
       POSTGRES_PASSWORD: alibou

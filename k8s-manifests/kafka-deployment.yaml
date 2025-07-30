@@ -26,7 +26,7 @@ spec:
             - name: KAFKA_LISTENERS
               value: PLAINTEXT://0.0.0.0:9092
             - name: KAFKA_ADVERTISED_LISTENERS
-              value: PLAINTEXT://kafka:9092
+              value: PLAINTEXT://kafka-service.dev.svc.cluster.local:9092
             - name: KAFKA_LISTENER_SECURITY_PROTOCOL_MAP
               value: PLAINTEXT:PLAINTEXT
             - name: KAFKA_INTER_BROKER_LISTENER_NAME
@@ -43,3 +43,8 @@ spec:
               value: "true"
             - name: KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR
               value: "1"
+            - name: KAFKA_SOCKET_REQUEST_MAX_BYTES
+              value: "200000000"
+            - name: KAFKA_MESSAGE_MAX_BYTES
+              value: "100000000"
+

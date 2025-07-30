@@ -19,6 +19,7 @@ spec:
       containers:
         - name: discovery-service
           image: claivent/micro:discovery-service-0.1.1
+          imagePullPolicy: Always
           ports:
             - containerPort: 8761
           env:

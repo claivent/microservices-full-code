@@ -12,4 +12,4 @@ RUN chmod +x ./mvnw && ./mvnw package -DskipTests
 
 EXPOSE 8761
 
-CMD ["java", "-jar", "target/discovery-service-0.1.1.jar"]
+CMD ["java", "-jar", "target/discovery-0.1.1.jar"]
