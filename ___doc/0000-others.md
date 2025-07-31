@@ -12,3 +12,5 @@ kubectl cp kiada:html/index.html /tmp/index.html
 ```bash
 kubectl cp /tmp/index.html kiada:html/
 ```
+
+

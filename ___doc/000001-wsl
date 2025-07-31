@@ -1,0 +1,6 @@
+wsl --help | Out-File -FilePath wsl-help.txt -Encoding utf8
+
+wsl --install -d Ubuntu-24.04 --name microU24  --web-download --location C:\_M\wsl\_install_folder --vhd-size 30G
+
+wsl --set-default -d microU24
+

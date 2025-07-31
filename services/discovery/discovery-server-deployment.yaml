@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: discovery-service
-  namespace: dev
+  namespace: default
   labels:
     app: discovery-service
 spec:
@@ -24,6 +24,6 @@ spec:
             - containerPort: 8761
           env:
             - name: SPRING_CONFIG_IMPORT
-              value: "optional:configserver:http://localhost:8888,optional:configserver:http://config-server.dev.svc.cluster.local:8888"
+              value: "optional:configserver:http://localhost:8888,optional:configserver:http://config-server.default.svc.cluster.local:8888"
 
 ---

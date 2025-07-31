@@ -1,25 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: config-server
+  name: product-service
   namespace: default
-  labels:
-    app: config-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: config-server
+      app: product-service
   template:
     metadata:
       labels:
-        app: config-server
+        app: product-service
     spec:
       containers:
-        - name: config-server
-          image: claivent/micro:config-server-0.1.1
+        - name: product-service
+          image: claivent/micro:product-0.1.1
           ports:
-            - containerPort: 8888
+            - containerPort: 8050
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: native

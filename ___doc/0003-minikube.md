@@ -1,4 +1,8 @@
+ ```bash
+ curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
 
+ ```
 
 
 ```bash
@@ -6,7 +10,7 @@ minikube profile list
 ```
 
 ```bash
-minikube start --nodes 3 --profile luksa-book --memory=8196 --cpus=4 
+minikube start --nodes 3 --profile luksa-book --memory=2048 --cpus=2 
 ```
 
 ```bash

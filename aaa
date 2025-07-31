@@ -12,13 +12,6 @@ spec:
       labels:
         app: pgadmin
     spec:
-      initContainers:
-        - name: fix-permissions
-          image: busybox
-          command: ['sh', '-c', 'chown -R 5050:5050 /var/lib/pgadmin']
-          volumeMounts:
-            - name: pgadmin-storage
-              mountPath: /var/lib/pgadmin
       containers:
       - env:
         - name: PGADMIN_DEFAULT_EMAIL
@@ -39,3 +32,30 @@ spec:
       - name: pgadmin-storage
         persistentVolumeClaim:
           claimName: pgadmin-pvc
+
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pgadmin-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: pgadmin
+spec:
+  ports:
+  - port: 8190
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: pgadmin

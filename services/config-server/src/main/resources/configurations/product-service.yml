@@ -3,7 +3,8 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/product
+    #url: jdbc:postgresql://localhost:5432/product
+    url: jdbc:postgresql://postgres.default.svc.cluster.local:5432/product
     username: alibou
     password: alibou
   jpa:
