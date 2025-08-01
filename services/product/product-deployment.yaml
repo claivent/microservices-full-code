@@ -15,9 +15,10 @@ spec:
     spec:
       containers:
         - name: product-service
-          image: claivent/micro:product-0.1.1
+          image: claivent/micro:product-service-0.1.1
+          imagePullPolicy: Always
           ports:
             - containerPort: 8050
-          env:
-            - name: SPRING_PROFILES_ACTIVE
-              value: native
+#          env:
+#            - name: SPRING_PROFILES_ACTIVE
+#              value: native

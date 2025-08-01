@@ -1,9 +1,9 @@
 eureka:
   instance:
-    hostname: localhost
+    hostname: discovery-service.default.svc.cluster.local
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 name:
   value: alibou
 spring:
@@ -15,3 +15,5 @@ management:
   tracing:
     sampling:
       probability: 1.0
+server:
+  port: 8761

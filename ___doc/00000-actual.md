@@ -4,6 +4,8 @@ minikube start --memory='4096' cpus='2' --force
 
 wsl --export tutorials C:\_M\wsl\luksa\minikube-k8s-installed\001-minikube-k8s-instaled.tar  
 
+testovací pod  
+kubectl run curlpod --rm -i --tty --image=curlimages/curl -- sh  
 
 
 

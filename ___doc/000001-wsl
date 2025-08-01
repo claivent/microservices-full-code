@@ -2,5 +2,15 @@ wsl --help | Out-File -FilePath wsl-help.txt -Encoding utf8
 
 wsl --install -d Ubuntu-24.04 --name microU24  --web-download --location C:\_M\wsl\_install_folder --vhd-size 30G
 
-wsl --set-default -d microU24
+wsl --set-default microU24
+
+wsl --install -d Ubuntu-22.04
+
+mkdir C:\WSL\_install_folder\v01-clear
+wsl --export microU24 C:\WSL\microU24-001-clear.tar
+
+wsl --import MyUbuntu C:\WSL\_install_folder\v01 C:\WSL\MyUbuntu.tar
+wsl --unregister Ubuntu-22.04
+wsl --list --verbose
+wsl -d MyUbuntu
 

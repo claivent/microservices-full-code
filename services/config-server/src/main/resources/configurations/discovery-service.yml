@@ -1,6 +1,7 @@
 eureka:
   instance:
-    hostname: localhost
+    #hostname: localhost
+    hostname: discovery-service.default.svc.cluster.local
   client:
     registerWithEureka: false
     fetchRegistry: false

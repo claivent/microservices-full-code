@@ -1,5 +1,5 @@
-server:
-  port: 8050
+#server:
+#  port: 8050
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver

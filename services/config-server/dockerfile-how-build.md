@@ -9,7 +9,7 @@ docker build -t claivent/micro:product-service-0.1.1  .
 
 docker push claivent/micro:config-server-0.1.1   
 docker push claivent/micro:discovery-service-0.1.1
-docker push claivent/micro:product-service-0.1.1  
+docker push claivent/micro:product-service-0.1.1
 
 
 ```shell
@@ -17,7 +17,7 @@ docker build --no-cache -t claivent/micro:config-server-0.1.1 .
 ``` 
 
 
-pøes lokální minikube
+pï¿½es lokï¿½lnï¿½ minikube
 
 https://minikube.sigs.k8s.io/docs/handbook/registry/
 
@@ -51,7 +51,7 @@ eval $(minikube -p lb docker-env)
 docker build -t product-service:latest .
 
 
-Pokud se chceš vrátit zpìt k lokálnímu Dockeru:   
+Pokud se chceï¿½ vrï¿½tit zpï¿½t k lokï¿½lnï¿½mu Dockeru:   
 
 eval $(minikube docker-env -u)
 

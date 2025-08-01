@@ -1,0 +1,15 @@
+### service.yaml (pro discovery-service)
+apiVersion: v1
+kind: Service
+metadata:
+  name: discovery-service
+  namespace: default
+spec:
+  selector:
+    app: discovery-service
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8761
+      targetPort: 8761
+  type: ClusterIP
