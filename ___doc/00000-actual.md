@@ -6,7 +6,10 @@ wsl --export tutorials C:\_M\wsl\luksa\minikube-k8s-installed\001-minikube-k8s-i
 
 testovací pod  
 kubectl run curlpod --rm -i --tty --image=curlimages/curl -- sh  
+http://discovery-service.default.svc.cluster.local:8761/actuator/info
 
+kubectl delete -f config-server/ ; kubectl delete -f discovery/;  kubectl delete -f product/  
+kubectl apply -f config-server/ ; kubectl apply -f discovery/;  kubectl apply -f product/  
 
 
 

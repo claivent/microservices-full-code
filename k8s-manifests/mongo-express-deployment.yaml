@@ -32,8 +32,10 @@ spec:
           value: admin
         - name: ME_CONFIG_SITE_AUTH_PASSWORD
           value: Heslo1
+#        - name: ME_CONFIG_SITE_PORT
+#          value: "8150"
         image: mongo-express
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         name: mongo-express
         ports:
         - containerPort: 8081

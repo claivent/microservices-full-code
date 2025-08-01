@@ -5,7 +5,14 @@ spring:
     mongodb:
       username: alibou
       password: alibou
-      host: localhost
+      host: mongo-db.default.svc.cluster.local
       port: 27017
       database: customer
       authentication-database: admin
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans

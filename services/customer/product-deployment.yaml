@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: product-service
+  name: customer-service
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: product-service
+      app: customer-service
   template:
     metadata:
       labels:
-        app: product-service
+        app: customer-service
     spec:
       containers:
-        - name: product-service
-          image: claivent/micro:product-service-0.1.1
-          imagePullPolicy: IfNotPresent
+        - name: customer-service
+          image: claivent/micro:customer-service-0.1.1
+          imagePullPolicy: Always
           ports:
-            - containerPort: 8050
+            - containerPort: 8090
 #          env:
 #            - name: SPRING_PROFILES_ACTIVE
 #              value: native

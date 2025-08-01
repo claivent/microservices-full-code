@@ -6,7 +6,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://discovery-service.default.svc.cluster.local:8761/eureka/
 
 server:
   port: 8761

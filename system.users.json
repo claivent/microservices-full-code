@@ -1,0 +1,33 @@
+[
+  {
+    "_id": "admin.alibou",
+    "userId": {
+      "$binary": {
+        "base64": "aXzSs4RvRuWovZC4zUI4sA==",
+        "subType": "04"
+      }
+    },
+    "user": "alibou",
+    "db": "admin",
+    "credentials": {
+      "SCRAM-SHA-1": {
+        "iterationCount": 10000,
+        "salt": "SHINi7+XrmhaDBFcSN0Mrw==",
+        "storedKey": "5N9y04l4mkIH7BR2axzWICFprX4=",
+        "serverKey": "jV+81NW6nRSU015WDKM68k7xSnA="
+      },
+      "SCRAM-SHA-256": {
+        "iterationCount": 15000,
+        "salt": "7XEl5QhGMQU0M7MGEbnJq9J6o5JvfnSzO33h3Q==",
+        "storedKey": "1MWQrU1FSkSzuT+cIFGrw5q2NbsUWZiq/EFVWsRNGTM=",
+        "serverKey": "u7muyMqDKToqUg0OvaEVnHjRGOuplDCrHjJmNQDKrsE="
+      }
+    },
+    "roles": [
+      {
+        "role": "root",
+        "db": "admin"
+      }
+    ]
+  }
+]

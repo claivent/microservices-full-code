@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-service
+spec:
+  selector:
+    app: customer-service
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8090
+      targetPort: 8090
+  type: ClusterIP
+  
