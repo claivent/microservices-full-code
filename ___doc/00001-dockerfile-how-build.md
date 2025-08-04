@@ -1,0 +1,82 @@
+mvn -N io.takari:maven:wrapper
+
+claivent/micro:config-server-0.1.1       
+      
+```shell
+docker build -t claivent/micro:config-server-0.1.1  .
+docker push claivent/micro:config-server-0.1.1
+docker build -t claivent/micro:discovery-service-0.1.1  .
+docker push claivent/micro:discovery-service-0.1.1
+docker build -t claivent/micro:product-service-0.1.2  .
+docker push claivent/micro:product-service-0.1.1
+```   
+
+```shell
+docker build --no-cache -t claivent/micro:config-server-0.1.1  .
+docker build --no-cache -t claivent/micro:discovery-service-0.1.1  .
+docker build --no-cache -t claivent/micro:product-service-0.1.1  .
+docker build --no-cache -t claivent/micro:customer-service-0.1.1  .
+docker build --no-cache -t claivent/micro:payment-service-0.1.1  .
+docker build --no-cache -t claivent/micro:order-service-0.1.1  .
+docker build --no-cache -t claivent/micro:notification-service-0.1.1  .
+docker build --no-cache -t claivent/micro:gateway-service-0.1.1  .
+```
+
+```shell
+docker push claivent/micro:config-server-0.1.1
+docker push claivent/micro:discovery-service-0.1.1
+docker push claivent/micro:product-service-0.1.2
+docker push claivent/micro:customer-service-0.1.1
+docker push claivent/micro:payment-service-0.1.1
+docker push claivent/micro:notification-service-0.1.1
+docker push claivent/micro:gateway-service-0.1.1
+
+
+```   
+
+
+
+
+```shell
+docker build --no-cache -t claivent/micro:config-server-0.1.1 .
+``` 
+
+
+p�es lok�ln� minikube
+
+https://minikube.sigs.k8s.io/docs/handbook/registry/
+
+``` minikube addons enable registry -p lb
+?  registry is an addon maintained by minikube. For any concerns contact minikube on GitHub.
+You can view the list of minikube maintainers at: https://github.com/kubernetes/minikube/blob/master/OWNERS
+????????????????????????????????????????????????????????????????????????????????????????????????????????
+?                                                                                                      ?
+?    Registry addon with docker driver uses port 49644 please use that instead of default port 5000    ?
+?                                                                                                      ?
+????????????????????????????????????????????????????????????????????????????????????????????????????????
+?  For more information see: https://minikube.sigs.k8s.io/docs/drivers/docker
+? Using image gcr.io/k8s-minikube/kube-registry-proxy:0.0.9
+? Using image docker.io/registry:3.0.0
+?  Verifying registry addon...
+?  The 'registry' addon is enabled
+claiv@DESKTOP-DDRU1N1:~/microservices/services$
+```
+
+```
+kubectl port-forward --namespace kube-system service/registry 49644:80
+```
+
+
+
+
+
+
+minikube -p lb docker-env  
+eval $(minikube -p lb docker-env)  
+docker build -t product-service:latest .
+
+
+Pokud se chce� vr�tit zp�t k lok�ln�mu Dockeru:   
+
+eval $(minikube docker-env -u)
+

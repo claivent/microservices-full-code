@@ -8,22 +8,55 @@ spring:
           enabled: true
       routes:
         - id: customer-service
-          uri: lb:http://CUSTOMER-SERVICE
+          uri: lb://CUSTOMER-SERVICE
           predicates:
             - Path=/api/v1/customers/**
+          filters:
+            - RewritePath=/api/v1/customers(?<remaining>/?.*), /api/v1/customers${remaining}
         - id: order-service
-          uri: lb:http://ORDER-SERVICE
+          uri: lb://ORDER-SERVICE
           predicates:
             - Path=/api/v1/orders/**
+          filters:
+            - RewritePath=/api/v1/orders(?<remaining>/?.*), /api/v1/orders${remaining}
         - id: order-lines-service
-          uri: lb:http://ORDER-SERVICE
+          uri: lb://ORDER-SERVICE
           predicates:
             - Path=/api/v1/order-lines/**
         - id: product-service
-          uri: lb:http://PRODUCT-SERVICE
+          uri: lb://PRODUCT-SERVICE
           predicates:
             - Path=/api/v1/products/**
+          filters:
+            - RewritePath=/api/v1/products(?<remaining>/?.*), /api/v1/products${remaining}
+
         - id: payment-service
-          uri: lb:http://PAYMENT-SERVICE
+          uri: lb://PAYMENT-SERVICE
           predicates:
             - Path=/api/v1/payments/**
+          filters:
+            - RewritePath=/api/v1/payments(?<remaining>/?.*), /api/v1/payments${remaining}
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus, env
+  endpoint:
+    health:
+      show-details: always
+  tracing:
+    sampling:
+      probability: 1.0
+    zipkin:
+      base-url: http://zipkin:9411
+      endpoint: http://zipkin:9411/api/v2/spans
+
+
+

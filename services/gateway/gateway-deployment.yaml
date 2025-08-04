@@ -1,24 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: product-service
+  name: gateway-service
+
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: product-service
+      app: gateway-service
+
   template:
     metadata:
       labels:
-        app: product-service
+        app: gateway-service
+
     spec:
       containers:
-        - name: product-service
-          image: claivent/micro:product-service-0.1.3
+        - name: gateway-service
+
+          image: claivent/micro:gateway-service-0.1.4
           imagePullPolicy: Always
           ports:
-            - containerPort: 8050
+            - containerPort: 8222
 #          env:
 #            - name: SPRING_PROFILES_ACTIVE
 #              value: native

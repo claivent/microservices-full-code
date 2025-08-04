@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.alibou</groupId>
 	<artifactId>payment</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.1</version>
 	<name>payment</name>
 	<description>payment</description>
 	<properties>

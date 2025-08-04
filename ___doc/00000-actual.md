@@ -11,10 +11,23 @@ http://discovery-service.default.svc.cluster.local:8761/actuator/info
 kubectl delete -f config-server/ ; kubectl delete -f discovery/;  kubectl delete -f product/  
 kubectl apply -f config-server/ ; kubectl apply -f discovery/;  kubectl apply -f product/  
 
+wsl --cd C:\_M\java\heroku\microservices-full-code
 
 
+kubectl rollout restart -n default deployment discovery-service
+kubectl rollout restart -n default deployment payment-service
+kubectl rollout restart -n default deployment product-service
+kubectl rollout restart -n default deployment order-service
+kubectl rollout restart -n default deployment customer-service
+kubectl rollout restart -n default deployment notification-service
+kubectl rollout restart -n default deployment gateway-service
+
+curl http://gateway-service:8222/actuator/env | grep zipkin
 
 kubectl create -f 'https://strimzi.io/install/latest?namespace=dev' 
+
+
+
 
 
 ## Argo cd

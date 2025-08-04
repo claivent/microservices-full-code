@@ -3,17 +3,18 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/order
+    #url: jdbc:postgresql://localhost:5432/order
+    url: jdbc:postgresql://postgres.default.svc.cluster.local:5432/order
     username: alibou
     password: alibou
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   kafka:
     producer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: kafka-service.default.svc.cluster.local:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
@@ -21,6 +22,26 @@ spring:
 
 application:
   config:
-    customer-url: http://localhost:8222/api/v1/customers
-    payment-url: http://localhost:8222/api/v1/payments
-    product-url: http://localhost:8222/api/v1/products
+    customer-url: http://customer-service.default.svc.cluster.local:8222/api/v1/customers
+    payment-url: http://payment-service.default.svc.cluster.local:8222/api/v1/payments
+    product-url: http://product-service.default.svc.cluster.local:8222/api/v1/products
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus, env
+  endpoint:
+    health:
+      show-details: always
+  tracing:
+    sampling:
+      probability: 1.0
+    zipkin:
+      base-url: http://zipkin:9411
+      endpoint: http://zipkin:9411/api/v2/spans

@@ -1,0 +1,411 @@
+{
+  "activeProfiles": [], "propertySources": [
+  {"name": "server.ports", "properties": {"local.server.port": {"value": "******"}}},
+  {"name": "gateway-properties", "properties": {"spring.webflux.hiddenmethod.filter.enabled": {"value": "******"}}}, {
+    "name": "systemProperties", "properties": {
+      "java.specification.version"            : {"value": "******"}, "sun.jnu.encoding": {"value": "******"},
+      "java.class.path"                       : {"value": "******"}, "java.vm.vendor": {"value": "******"},
+      "sun.arch.data.model"                   : {"value": "******"}, "java.vendor.url": {"value": "******"},
+      "user.timezone"                         : {"value": "******"}, "org.jboss.logging.provider": {"value": "******"},
+      "java.vm.specification.version"         : {"value": "******"}, "os.name": {"value": "******"},
+      "sun.java.launcher"                     : {"value": "******"}, "user.country": {"value": "******"},
+      "sun.boot.library.path"                 : {"value": "******"}, "sun.java.command": {"value": "******"},
+      "jdk.debug"                             : {"value": "******"}, "sun.cpu.endian": {"value": "******"},
+      "user.home"                             : {"value": "******"}, "user.language": {"value": "******"},
+      "java.specification.vendor"             : {"value": "******"}, "java.version.date": {"value": "******"},
+      "java.home"                             : {"value": "******"}, "file.separator": {"value": "******"},
+      "java.vm.compressedOopsMode"            : {"value": "******"}, "line.separator": {"value": "******"},
+      "java.vm.specification.vendor"          : {"value": "******"}, "java.specification.name": {"value": "******"},
+      "FILE_LOG_CHARSET"                      : {"value": "******"}, "java.awt.headless": {"value": "******"},
+      "java.protocol.handler.pkgs"            : {"value": "******"}, "sun.management.compiler": {"value": "******"},
+      "java.runtime.version"                  : {"value": "******"}, "LOG_CORRELATION_PATTERN": {"value": "******"},
+      "user.name"                             : {"value": "******"}, "path.separator": {"value": "******"},
+      "os.version"                            : {"value": "******"}, "java.runtime.name": {"value": "******"},
+      "file.encoding"                         : {"value": "******"}, "java.vm.name": {"value": "******"},
+      "java.vendor.version"                   : {"value": "******"}, "java.vendor.url.bug": {"value": "******"},
+      "java.io.tmpdir"                        : {"value": "******"}, "java.version": {"value": "******"},
+      "user.dir"                              : {"value": "******"}, "os.arch": {"value": "******"},
+      "java.vm.specification.name"            : {"value": "******"}, "PID": {"value": "******"},
+      "CONSOLE_LOG_CHARSET"                   : {"value": "******"}, "native.encoding": {"value": "******"},
+      "java.library.path"                     : {"value": "******"}, "java.vm.info": {"value": "******"},
+      "java.vendor"                           : {"value": "******"}, "java.vm.version": {"value": "******"},
+      "java.specification.maintenance.version": {"value": "******"}, "sun.io.unicode.encoding": {"value": "******"},
+      "java.class.version"                    : {"value": "******"}, "LOGGED_APPLICATION_NAME": {"value": "******"}
+    }
+  }, {
+    "name": "systemEnvironment", "properties": {
+      "PATH": {"value": "******", "origin": "System Environment Property \"PATH\""}, "GATEWAY_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"GATEWAY_SERVICE_PORT\""
+      }, "NOTIFICATION_SERVICE_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"NOTIFICATION_SERVICE_SERVICE_PORT\""
+      }, "PGADMIN_PORT_8190_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"PGADMIN_PORT_8190_TCP_ADDR\""
+      }, "ORDER_SERVICE_PORT_8070_TCP": {
+        "value": "******", "origin": "System Environment Property \"ORDER_SERVICE_PORT_8070_TCP\""
+      },
+      "MAIL_DEV_PORT_1080_TCP": {"value": "******", "origin": "System Environment Property \"MAIL_DEV_PORT_1080_TCP\""},
+      "ORDER_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"ORDER_SERVICE_PORT\""},
+      "MONGO_EXPRESS_PORT_8150_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"MONGO_EXPRESS_PORT_8150_TCP_PROTO\""
+      }, "DISCOVERY_SERVICE_PORT_8761_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"DISCOVERY_SERVICE_PORT_8761_TCP_PORT\""
+      }, "MONGO_EXPRESS_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"MONGO_EXPRESS_SERVICE_PORT\""
+      }, "CONFIG_SERVER_SERVICE_PORT_HTTP": {
+        "value": "******", "origin": "System Environment Property \"CONFIG_SERVER_SERVICE_PORT_HTTP\""
+      }, "CUSTOMER_SERVICE_SERVICE_HOST": {
+        "value": "******", "origin": "System Environment Property \"CUSTOMER_SERVICE_SERVICE_HOST\""
+      }, "PAYMENT_SERVICE_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"PAYMENT_SERVICE_SERVICE_PORT\""
+      }, "PAYMENT_SERVICE_PORT_8060_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"PAYMENT_SERVICE_PORT_8060_TCP_PROTO\""
+      }, "ORDER_SERVICE_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"ORDER_SERVICE_SERVICE_PORT\""
+      },
+      "MAIL_DEV_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"MAIL_DEV_SERVICE_PORT\""},
+      "PWD": {"value": "******", "origin": "System Environment Property \"PWD\""},
+      "PGADMIN_PORT_8190_TCP": {"value": "******", "origin": "System Environment Property \"PGADMIN_PORT_8190_TCP\""},
+      "ORDER_SERVICE_SERVICE_PORT_HTTP": {
+        "value": "******", "origin": "System Environment Property \"ORDER_SERVICE_SERVICE_PORT_HTTP\""
+      }, "ZOOKEEPER_PORT_2181_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"ZOOKEEPER_PORT_2181_TCP_PROTO\""
+      }, "LANGUAGE": {"value": "******", "origin": "System Environment Property \"LANGUAGE\""},
+      "PRODUCT_SERVICE_PORT_8050_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"PRODUCT_SERVICE_PORT_8050_TCP_ADDR\""
+      }, "ZOOKEEPER_SERVICE_PORT_ZOOKEEPER": {
+        "value": "******", "origin": "System Environment Property \"ZOOKEEPER_SERVICE_PORT_ZOOKEEPER\""
+      },
+      "POSTGRES_PORT_5432_TCP": {"value": "******", "origin": "System Environment Property \"POSTGRES_PORT_5432_TCP\""},
+      "ZIPKIN_PORT_9411_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"ZIPKIN_PORT_9411_TCP_ADDR\""
+      }, "PAYMENT_SERVICE_SERVICE_HOST": {
+        "value": "******", "origin": "System Environment Property \"PAYMENT_SERVICE_SERVICE_HOST\""
+      }, "CUSTOMER_SERVICE_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"CUSTOMER_SERVICE_SERVICE_PORT\""
+      }, "PAYMENT_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"PAYMENT_SERVICE_PORT\""},
+      "MONGO_DB_PORT": {"value": "******", "origin": "System Environment Property \"MONGO_DB_PORT\""},
+      "ZIPKIN_SERVICE_HOST": {"value": "******", "origin": "System Environment Property \"ZIPKIN_SERVICE_HOST\""},
+      "MONGO_EXPRESS_SERVICE_HOST": {
+        "value": "******", "origin": "System Environment Property \"MONGO_EXPRESS_SERVICE_HOST\""
+      },
+      "KAFKA_UI_SERVICE_HOST": {"value": "******", "origin": "System Environment Property \"KAFKA_UI_SERVICE_HOST\""},
+      "ZOOKEEPER_PORT_2181_TCP": {
+        "value": "******", "origin": "System Environment Property \"ZOOKEEPER_PORT_2181_TCP\""
+      }, "ORDER_SERVICE_PORT_8070_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"ORDER_SERVICE_PORT_8070_TCP_PROTO\""
+      }, "PAYMENT_SERVICE_SERVICE_PORT_HTTP": {
+        "value": "******", "origin": "System Environment Property \"PAYMENT_SERVICE_SERVICE_PORT_HTTP\""
+      }, "NOTIFICATION_SERVICE_SERVICE_PORT_HTTP": {
+        "value": "******", "origin": "System Environment Property \"NOTIFICATION_SERVICE_SERVICE_PORT_HTTP\""
+      }, "LC_ALL": {"value": "******", "origin": "System Environment Property \"LC_ALL\""},
+      "ORDER_SERVICE_SERVICE_HOST": {
+        "value": "******", "origin": "System Environment Property \"ORDER_SERVICE_SERVICE_HOST\""
+      }, "CUSTOMER_SERVICE_PORT_8090_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"CUSTOMER_SERVICE_PORT_8090_TCP_PORT\""
+      }, "KAFKA_UI_PORT_80_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"KAFKA_UI_PORT_80_TCP_PROTO\""
+      }, "KAFKA_UI_PORT_80_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"KAFKA_UI_PORT_80_TCP_ADDR\""
+      }, "KUBERNETES_SERVICE_PORT_HTTPS": {
+        "value": "******", "origin": "System Environment Property \"KUBERNETES_SERVICE_PORT_HTTPS\""
+      }, "SHLVL": {"value": "******", "origin": "System Environment Property \"SHLVL\""},
+      "POSTGRES_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"POSTGRES_SERVICE_PORT\""},
+      "MAIL_DEV_PORT_1080_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"MAIL_DEV_PORT_1080_TCP_ADDR\""
+      }, "KUBERNETES_PORT": {"value": "******", "origin": "System Environment Property \"KUBERNETES_PORT\""},
+      "MAIL_DEV_SERVICE_PORT_HTTP": {
+        "value": "******", "origin": "System Environment Property \"MAIL_DEV_SERVICE_PORT_HTTP\""
+      }, "JAVA_HOME": {"value": "******", "origin": "System Environment Property \"JAVA_HOME\""},
+      "PRODUCT_SERVICE_PORT_8050_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"PRODUCT_SERVICE_PORT_8050_TCP_PROTO\""
+      }, "PGADMIN_PORT_8190_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"PGADMIN_PORT_8190_TCP_PROTO\""
+      }, "PAYMENT_SERVICE_PORT_8060_TCP": {
+        "value": "******", "origin": "System Environment Property \"PAYMENT_SERVICE_PORT_8060_TCP\""
+      }, "MONGO_DB_PORT_27017_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"MONGO_DB_PORT_27017_TCP_ADDR\""
+      }, "DISCOVERY_SERVICE_PORT_8761_TCP": {
+        "value": "******", "origin": "System Environment Property \"DISCOVERY_SERVICE_PORT_8761_TCP\""
+      }, "KAFKA_SERVICE_PORT_9092_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"KAFKA_SERVICE_PORT_9092_TCP_PORT\""
+      }, "MAIL_DEV_PORT_1025_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"MAIL_DEV_PORT_1025_TCP_PORT\""
+      }, "JRE_CACERTS_PATH": {"value": "******", "origin": "System Environment Property \"JRE_CACERTS_PATH\""},
+      "MONGO_EXPRESS_PORT_8150_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"MONGO_EXPRESS_PORT_8150_TCP_ADDR\""
+      }, "GATEWAY_SERVICE_PORT_8222_TCP": {
+        "value": "******", "origin": "System Environment Property \"GATEWAY_SERVICE_PORT_8222_TCP\""
+      }, "PRODUCT_SERVICE_PORT_8050_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"PRODUCT_SERVICE_PORT_8050_TCP_PORT\""
+      }, "JAVA_VERSION": {"value": "******", "origin": "System Environment Property \"JAVA_VERSION\""},
+      "PAYMENT_SERVICE_PORT_8060_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"PAYMENT_SERVICE_PORT_8060_TCP_ADDR\""
+      }, "MONGO_DB_PORT_27017_TCP": {
+        "value": "******", "origin": "System Environment Property \"MONGO_DB_PORT_27017_TCP\""
+      }, "MAIL_DEV_PORT_1025_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"MAIL_DEV_PORT_1025_TCP_PROTO\""
+      }, "KAFKA_SERVICE_PORT_9092_TCP": {
+        "value": "******", "origin": "System Environment Property \"KAFKA_SERVICE_PORT_9092_TCP\""
+      }, "ZOOKEEPER_PORT_2181_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"ZOOKEEPER_PORT_2181_TCP_PORT\""
+      }, "KUBERNETES_PORT_443_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"KUBERNETES_PORT_443_TCP_ADDR\""
+      }, "ORDER_SERVICE_PORT_8070_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"ORDER_SERVICE_PORT_8070_TCP_ADDR\""
+      }, "KAFKA_SERVICE_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"KAFKA_SERVICE_SERVICE_PORT\""
+      }, "ZIPKIN_PORT": {"value": "******", "origin": "System Environment Property \"ZIPKIN_PORT\""},
+      "CONFIG_SERVER_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"CONFIG_SERVER_SERVICE_PORT\""
+      }, "PGADMIN_PORT": {"value": "******", "origin": "System Environment Property \"PGADMIN_PORT\""},
+      "MONGO_DB_PORT_27017_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"MONGO_DB_PORT_27017_TCP_PROTO\""
+      }, "KUBERNETES_PORT_443_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"KUBERNETES_PORT_443_TCP_PROTO\""
+      }, "NOTIFICATION_SERVICE_PORT_8040_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"NOTIFICATION_SERVICE_PORT_8040_TCP_PORT\""
+      }, "CONFIG_SERVER_PORT_8888_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"CONFIG_SERVER_PORT_8888_TCP_ADDR\""
+      }, "GATEWAY_SERVICE_PORT_8222_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"GATEWAY_SERVICE_PORT_8222_TCP_ADDR\""
+      }, "ZIPKIN_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"ZIPKIN_SERVICE_PORT\""},
+      "NOTIFICATION_SERVICE_SERVICE_HOST": {
+        "value": "******", "origin": "System Environment Property \"NOTIFICATION_SERVICE_SERVICE_HOST\""
+      }, "MAIL_DEV_PORT_1080_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"MAIL_DEV_PORT_1080_TCP_PROTO\""
+      }, "NOTIFICATION_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"NOTIFICATION_SERVICE_PORT\""
+      }, "PRODUCT_SERVICE_PORT_8050_TCP": {
+        "value": "******", "origin": "System Environment Property \"PRODUCT_SERVICE_PORT_8050_TCP\""
+      }, "CUSTOMER_SERVICE_SERVICE_PORT_HTTP": {
+        "value": "******", "origin": "System Environment Property \"CUSTOMER_SERVICE_SERVICE_PORT_HTTP\""
+      }, "POSTGRES_PORT_5432_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"POSTGRES_PORT_5432_TCP_ADDR\""
+      }, "PRODUCT_SERVICE_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"PRODUCT_SERVICE_SERVICE_PORT\""
+      }, "MONGO_EXPRESS_PORT_8150_TCP": {
+        "value": "******", "origin": "System Environment Property \"MONGO_EXPRESS_PORT_8150_TCP\""
+      }, "DISCOVERY_SERVICE_PORT_8761_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"DISCOVERY_SERVICE_PORT_8761_TCP_ADDR\""
+      }, "ZOOKEEPER_PORT": {"value": "******", "origin": "System Environment Property \"ZOOKEEPER_PORT\""},
+      "PGADMIN_PORT_8190_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"PGADMIN_PORT_8190_TCP_PORT\""
+      }, "GATEWAY_SERVICE_PORT_8222_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"GATEWAY_SERVICE_PORT_8222_TCP_PROTO\""
+      }, "GATEWAY_SERVICE_SERVICE_HOST": {
+        "value": "******", "origin": "System Environment Property \"GATEWAY_SERVICE_SERVICE_HOST\""
+      }, "MAIL_DEV_SERVICE_PORT_SMTP": {
+        "value": "******", "origin": "System Environment Property \"MAIL_DEV_SERVICE_PORT_SMTP\""
+      },
+      "MONGO_DB_SERVICE_HOST": {"value": "******", "origin": "System Environment Property \"MONGO_DB_SERVICE_HOST\""},
+      "NOTIFICATION_SERVICE_PORT_8040_TCP": {
+        "value": "******", "origin": "System Environment Property \"NOTIFICATION_SERVICE_PORT_8040_TCP\""
+      }, "CONFIG_SERVER_PORT_8888_TCP": {
+        "value": "******", "origin": "System Environment Property \"CONFIG_SERVER_PORT_8888_TCP\""
+      }, "GATEWAY_SERVICE_PORT_8222_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"GATEWAY_SERVICE_PORT_8222_TCP_PORT\""
+      }, "CONFIG_SERVER_SERVICE_HOST": {
+        "value": "******", "origin": "System Environment Property \"CONFIG_SERVER_SERVICE_HOST\""
+      }, "KAFKA_SERVICE_SERVICE_HOST": {
+        "value": "******", "origin": "System Environment Property \"KAFKA_SERVICE_SERVICE_HOST\""
+      }, "KUBERNETES_PORT_443_TCP": {
+        "value": "******", "origin": "System Environment Property \"KUBERNETES_PORT_443_TCP\""
+      }, "DISCOVERY_SERVICE_SERVICE_HOST": {
+        "value": "******", "origin": "System Environment Property \"DISCOVERY_SERVICE_SERVICE_HOST\""
+      }, "GATEWAY_SERVICE_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"GATEWAY_SERVICE_SERVICE_PORT\""
+      }, "NOTIFICATION_SERVICE_PORT_8040_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"NOTIFICATION_SERVICE_PORT_8040_TCP_ADDR\""
+      },
+      "ZOOKEEPER_SERVICE_HOST": {"value": "******", "origin": "System Environment Property \"ZOOKEEPER_SERVICE_HOST\""},
+      "KAFKA_UI_PORT_80_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"KAFKA_UI_PORT_80_TCP_PORT\""
+      }, "CUSTOMER_SERVICE_PORT_8090_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"CUSTOMER_SERVICE_PORT_8090_TCP_ADDR\""
+      }, "POSTGRES_PORT": {"value": "******", "origin": "System Environment Property \"POSTGRES_PORT\""},
+      "ORDER_SERVICE_PORT_8070_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"ORDER_SERVICE_PORT_8070_TCP_PORT\""
+      }, "DISCOVERY_SERVICE_PORT_8761_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"DISCOVERY_SERVICE_PORT_8761_TCP_PROTO\""
+      }, "ZIPKIN_PORT_9411_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"ZIPKIN_PORT_9411_TCP_PROTO\""
+      }, "PGADMIN_SERVICE_HOST": {"value": "******", "origin": "System Environment Property \"PGADMIN_SERVICE_HOST\""},
+      "PRODUCT_SERVICE_SERVICE_HOST": {
+        "value": "******", "origin": "System Environment Property \"PRODUCT_SERVICE_SERVICE_HOST\""
+      }, "CONFIG_SERVER_PORT_8888_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"CONFIG_SERVER_PORT_8888_TCP_PROTO\""
+      },
+      "POSTGRES_SERVICE_HOST": {"value": "******", "origin": "System Environment Property \"POSTGRES_SERVICE_HOST\""},
+      "ZIPKIN_PORT_9411_TCP": {"value": "******", "origin": "System Environment Property \"ZIPKIN_PORT_9411_TCP\""},
+      "POSTGRES_PORT_5432_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"POSTGRES_PORT_5432_TCP_PROTO\""
+      }, "CUSTOMER_SERVICE_PORT_8090_TCP": {
+        "value": "******", "origin": "System Environment Property \"CUSTOMER_SERVICE_PORT_8090_TCP\""
+      }, "PRODUCT_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"PRODUCT_SERVICE_PORT\""},
+      "CUSTOMER_SERVICE_PORT_8090_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"CUSTOMER_SERVICE_PORT_8090_TCP_PROTO\""
+      }, "NOTIFICATION_SERVICE_PORT_8040_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"NOTIFICATION_SERVICE_PORT_8040_TCP_PROTO\""
+      }, "ZIPKIN_PORT_9411_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"ZIPKIN_PORT_9411_TCP_PORT\""
+      }, "MAIL_DEV_PORT_1025_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"MAIL_DEV_PORT_1025_TCP_ADDR\""
+      }, "POSTGRES_PORT_5432_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"POSTGRES_PORT_5432_TCP_PORT\""
+      },
+      "MAIL_DEV_PORT_1025_TCP": {"value": "******", "origin": "System Environment Property \"MAIL_DEV_PORT_1025_TCP\""},
+      "MONGO_EXPRESS_PORT": {"value": "******", "origin": "System Environment Property \"MONGO_EXPRESS_PORT\""},
+      "PGADMIN_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"PGADMIN_SERVICE_PORT\""},
+      "DISCOVERY_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"DISCOVERY_SERVICE_PORT\""},
+      "MONGO_DB_PORT_27017_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"MONGO_DB_PORT_27017_TCP_PORT\""
+      }, "DISCOVERY_SERVICE_SERVICE_PORT_HTTP": {
+        "value": "******", "origin": "System Environment Property \"DISCOVERY_SERVICE_SERVICE_PORT_HTTP\""
+      }, "DISCOVERY_SERVICE_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"DISCOVERY_SERVICE_SERVICE_PORT\""
+      }, "MAIL_DEV_PORT_1080_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"MAIL_DEV_PORT_1080_TCP_PORT\""
+      }, "KAFKA_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"KAFKA_SERVICE_PORT\""},
+      "KUBERNETES_SERVICE_HOST": {
+        "value": "******", "origin": "System Environment Property \"KUBERNETES_SERVICE_HOST\""
+      }, "LANG": {"value": "******", "origin": "System Environment Property \"LANG\""},
+      "KAFKA_UI_PORT": {"value": "******", "origin": "System Environment Property \"KAFKA_UI_PORT\""},
+      "KAFKA_UI_PORT_80_TCP": {"value": "******", "origin": "System Environment Property \"KAFKA_UI_PORT_80_TCP\""},
+      "KAFKA_SERVICE_PORT_9092_TCP_PROTO": {
+        "value": "******", "origin": "System Environment Property \"KAFKA_SERVICE_PORT_9092_TCP_PROTO\""
+      },
+      "CUSTOMER_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"CUSTOMER_SERVICE_PORT\""},
+      "KAFKA_SERVICE_SERVICE_PORT_KAFKA": {
+        "value": "******", "origin": "System Environment Property \"KAFKA_SERVICE_SERVICE_PORT_KAFKA\""
+      }, "CONFIG_SERVER_PORT": {"value": "******", "origin": "System Environment Property \"CONFIG_SERVER_PORT\""},
+      "MONGO_DB_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"MONGO_DB_SERVICE_PORT\""},
+      "GATEWAY_SERVICE_SERVICE_PORT_HTTP": {
+        "value": "******", "origin": "System Environment Property \"GATEWAY_SERVICE_SERVICE_PORT_HTTP\""
+      }, "KUBERNETES_SERVICE_PORT": {
+        "value": "******", "origin": "System Environment Property \"KUBERNETES_SERVICE_PORT\""
+      },
+      "KAFKA_UI_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"KAFKA_UI_SERVICE_PORT\""},
+      "MONGO_EXPRESS_PORT_8150_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"MONGO_EXPRESS_PORT_8150_TCP_PORT\""
+      }, "HOSTNAME": {"value": "******", "origin": "System Environment Property \"HOSTNAME\""},
+      "CONFIG_SERVER_PORT_8888_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"CONFIG_SERVER_PORT_8888_TCP_PORT\""
+      }, "PAYMENT_SERVICE_PORT_8060_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"PAYMENT_SERVICE_PORT_8060_TCP_PORT\""
+      }, "PRODUCT_SERVICE_SERVICE_PORT_HTTP": {
+        "value": "******", "origin": "System Environment Property \"PRODUCT_SERVICE_SERVICE_PORT_HTTP\""
+      }, "ZOOKEEPER_PORT_2181_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"ZOOKEEPER_PORT_2181_TCP_ADDR\""
+      },
+      "ZOOKEEPER_SERVICE_PORT": {"value": "******", "origin": "System Environment Property \"ZOOKEEPER_SERVICE_PORT\""},
+      "KUBERNETES_PORT_443_TCP_PORT": {
+        "value": "******", "origin": "System Environment Property \"KUBERNETES_PORT_443_TCP_PORT\""
+      }, "KAFKA_SERVICE_PORT_9092_TCP_ADDR": {
+        "value": "******", "origin": "System Environment Property \"KAFKA_SERVICE_PORT_9092_TCP_ADDR\""
+      },
+      "MAIL_DEV_SERVICE_HOST": {"value": "******", "origin": "System Environment Property \"MAIL_DEV_SERVICE_HOST\""},
+      "HOME": {"value": "******", "origin": "System Environment Property \"HOME\""},
+      "MAIL_DEV_PORT": {"value": "******", "origin": "System Environment Property \"MAIL_DEV_PORT\""}
+    }
+  }, {
+    "name": "configserver:classpath:/configurations/gateway-service.yml", "properties": {
+      "server.port"                                      : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:2:9"
+      }, "spring.cloud.gateway.discovery.locator.enabled": {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:8:20"
+      }, "spring.cloud.gateway.routes[0].id"             : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:10:15"
+      }, "spring.cloud.gateway.routes[0].uri"            : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:11:16"
+      }, "spring.cloud.gateway.routes[0].predicates[0]"  : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:13:15"
+      }, "spring.cloud.gateway.routes[0].filters[0]"     : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:15:15"
+      }, "spring.cloud.gateway.routes[1].id"             : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:16:15"
+      }, "spring.cloud.gateway.routes[1].uri"            : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:17:16"
+      }, "spring.cloud.gateway.routes[1].predicates[0]"  : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:19:15"
+      }, "spring.cloud.gateway.routes[1].filters[0]"     : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:21:15"
+      }, "spring.cloud.gateway.routes[2].id"             : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:22:15"
+      }, "spring.cloud.gateway.routes[2].uri"            : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:23:16"
+      }, "spring.cloud.gateway.routes[2].predicates[0]"  : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:25:15"
+      }, "spring.cloud.gateway.routes[3].id"             : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:26:15"
+      }, "spring.cloud.gateway.routes[3].uri"            : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:27:16"
+      }, "spring.cloud.gateway.routes[3].predicates[0]"  : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:29:15"
+      }, "spring.cloud.gateway.routes[3].filters[0]"     : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:31:15"
+      }, "spring.cloud.gateway.routes[4].id"             : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:33:15"
+      }, "spring.cloud.gateway.routes[4].uri"            : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:34:16"
+      }, "spring.cloud.gateway.routes[4].predicates[0]"  : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:36:15"
+      }, "spring.cloud.gateway.routes[4].filters[0]"     : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:38:15"
+      }, "spring.zipkin.base-url"                        : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:40:15"
+      }, "eureka.instance.prefer-ip-address"             : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:44:24"
+      }, "eureka.instance.instance-id"                   : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:45:18"
+      }, "management.endpoints.web.exposure.include"     : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:51:18"
+      }, "management.endpoint.health.show-details"       : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:54:21"
+      }, "management.tracing.sampling.probability"       : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:57:20"
+      }, "management.tracing.zipkin.base-url"            : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:59:17"
+      }, "management.tracing.zipkin.endpoint"            : {
+        "value": "******", "origin": "Config Server classpath:/configurations/gateway-service.yml:60:17"
+      }
+    }
+  }, {
+    "name": "configserver:classpath:/configurations/application.yml", "properties": {
+      "eureka.instance.hostname"                         : {
+        "value": "******", "origin": "Config Server classpath:/configurations/application.yml:3:15"
+      }, "eureka.client.service-url.defaultZone"         : {
+        "value": "******", "origin": "Config Server classpath:/configurations/application.yml:6:20"
+      }, "name.value"                                    : {
+        "value": "******", "origin": "Config Server classpath:/configurations/application.yml:8:10"
+      }, "spring.cloud.config.override-system-properties": {
+        "value": "******", "origin": "Config Server classpath:/configurations/application.yml:12:35"
+      }, "server.port"                                   : {
+        "value": "******", "origin": "Config Server classpath:/configurations/application.yml:17:9"
+      }, "management.endpoints.web.exposure.include"     : {
+        "value": "******", "origin": "Config Server classpath:/configurations/application.yml:23:18"
+      }, "management.endpoint.health.show-details"       : {
+        "value": "******", "origin": "Config Server classpath:/configurations/application.yml:26:21"
+      }, "management.tracing.sampling.probability"       : {
+        "value": "******", "origin": "Config Server classpath:/configurations/application.yml:29:20"
+      }, "management.tracing.zipkin.base-url"            : {
+        "value": "******", "origin": "Config Server classpath:/configurations/application.yml:31:17"
+      }, "management.tracing.zipkin.endpoint"            : {
+        "value": "******", "origin": "Config Server classpath:/configurations/application.yml:32:17"
+      }
+    }
+  }, {"name": "configClient", "properties": {}}, {
+    "name"      : "Config resource 'class path resource [application.yml]' via location 'optional:classpath:/'",
+    "properties": {
+      "spring.application.name": {
+        "value": "******", "origin": "class path resource [application.yml] from gateway-0.1.1.jar - 3:11"
+      }, "spring.config.import": {
+        "value": "******", "origin": "class path resource [application.yml] from gateway-0.1.1.jar - 5:13"
+      }
+    }
+  }, {
+    "name": "springCloudClientHostInfo", "properties": {
+      "spring.cloud.client.hostname": {"value": "******"}, "spring.cloud.client.ip-address": {"value": "******"}
+    }
+  }, {"name": "logCorrelation", "properties": {"logging.expect-correlation-id": {"value": "******"}}}
+]
+}

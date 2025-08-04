@@ -11,4 +11,4 @@ RUN chmod +x ./mvnw && ./mvnw clean package -DskipTests
 
 EXPOSE 8090
 
-CMD ["java", "-jar", "target/order-0.1.1.jar"]
+CMD ["java", "-jar", "target/notification-0.1.1.jar"]

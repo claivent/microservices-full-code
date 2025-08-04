@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: product-service
+  name: notification-service
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: product-service
+      app: notification-service
   template:
     metadata:
       labels:
-        app: product-service
+        app: notification-service
     spec:
       containers:
-        - name: product-service
-          image: claivent/micro:product-service-0.1.3
+        - name: notification-service
+          image: claivent/micro:notification-service-0.1.1
           imagePullPolicy: Always
           ports:
-            - containerPort: 8050
+            - containerPort: 8040
 #          env:
 #            - name: SPRING_PROFILES_ACTIVE
 #              value: native
