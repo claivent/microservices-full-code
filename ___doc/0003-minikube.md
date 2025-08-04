@@ -11,7 +11,7 @@ newgrp docker
 ```bash
 minikube profile list
 ```
-
+minikube service 'servis' --url
 ```bash
 minikube start --nodes 3 --profile luksa-book --memory=2048 --cpus=2 
 minikube start  --memory=8048 --cpus=6

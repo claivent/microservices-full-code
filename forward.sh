@@ -22,7 +22,7 @@ kubectl port-forward svc/mongo-express 8150:8150 &
 
 # pgAdmin
 
-kubectl port-forward svc/pgadmin 8190:8190 &
+kubectl port-forward svc/pgadmin 8290:8190 &
 
 # Zipkin
 echo Zipkin

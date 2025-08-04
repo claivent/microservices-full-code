@@ -8,7 +8,7 @@ COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
-RUN chmod +x ./mvnw && ./mvnw package -DskipTests
+RUN chmod +x ./mvnw && ./mvnw clean package -DskipTests
 
 EXPOSE 8888
 

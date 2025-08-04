@@ -1,4 +1,10 @@
-kubectl exec -it mongo-db-54b56f9667-k8wrw -- mongosh "mongodb://alibou:alibou@localhost:27017/admin"  
+kubectl run -it mongo-debug --image=mongo --bash
+mongosh "mongodb://alibou:alibou@localhost:27017/admin"
+
+kubectl exec -it mongo-db-54b56f9667-k8wrw -- mongosh "mongodb://alibou:alibou@mongo-db:27017/admin"  
+
+
+
 use customer  
 db.test.insertOne({name: "test"})
 
