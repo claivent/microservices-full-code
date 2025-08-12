@@ -37,8 +37,10 @@ spring:
           filters:
             - RewritePath=/api/v1/payments(?<remaining>/?.*), /api/v1/payments${remaining}
 
-
 eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service.default.svc.cluster.local:8761/eureka
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
@@ -55,6 +57,7 @@ management:
     sampling:
       probability: 1.0
     zipkin:
+      # URL služby Zipkin v K8s (název služby v default namespace)
       base-url: http://zipkin:9411
       endpoint: http://zipkin:9411/api/v2/spans
 

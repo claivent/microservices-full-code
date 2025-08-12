@@ -4,29 +4,6 @@ spring:
   config:
     import: optional:configserver:http://config-server.default.svc.cluster.local:8888
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health, info, metrics, prometheus, env
-  endpoint:
-    health:
-      show-details: always
-  tracing:
-    sampling:
-      probability: 1.0
-    zipkin:
-      # URL služby Zipkin v K8s (název služby v default namespace)
-      base-url: http://zipkin:9411
-      endpoint: http://zipkin:9411/api/v2/spans
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://discovery-service.default.svc.cluster.local:8761/eureka
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-
-server:
-  port: 8222
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG

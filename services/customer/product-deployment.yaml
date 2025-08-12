@@ -5,6 +5,7 @@ metadata:
   namespace: default
 spec:
   replicas: 1
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: customer-service
@@ -15,7 +16,7 @@ spec:
     spec:
       containers:
         - name: customer-service
-          image: claivent/micro:customer-service-0.1.1
+          image: claivent/micro:customer-service-0.1.2
           imagePullPolicy: Always
           ports:
             - containerPort: 8090

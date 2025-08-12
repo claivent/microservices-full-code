@@ -1,0 +1,38 @@
+Proč je disabled persistence ve values je enabled.
+---------------
+claivent@claivent-virtual-machine:~/IdeaProjects/microservices-full-code/services/grafana$ helm upgrade --install loki grafana/grafana \
+  --namespace default \
+  --values values.yaml
+Release "loki" does not exist. Installing it now.
+NAME: loki
+LAST DEPLOYED: Tue Aug  5 12:31:16 2025
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+NOTES:
+1. Get your 'admin' user password by running:
+
+   kubectl get secret --namespace default loki-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
+
+2. The Grafana server can be accessed via port 80 on the following DNS name from within your cluster:
+
+   loki-grafana.default.svc.cluster.local
+
+   Get the Grafana URL to visit by running these commands in the same shell:
+     export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=loki" -o jsonpath="{.items[0].metadata.name}")
+     kubectl --namespace default port-forward $POD_NAME 3000
+
+3. Login with the password from step 1 and the username: admin
+#################################################################################
+######   WARNING: Persistence is disabled!!! You will lose your data when   #####
+######            the Grafana pod is terminated.                            #####
+#################################################################################
+
+--------------
+
+claivent@claivent-virtual-machine:~/IdeaProjects/microservices-full-code/services/grafana$ k get pvc
+NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+mongo-pvc      Bound    pvc-1c274058-44c2-4b88-8900-c2b72d20a4e6   1Gi        RWO            standard       <unset>                 23h
+pgadmin-pvc    Bound    pvc-e216750f-66d2-49b8-ab1e-be48691bc9a8   1Gi        RWO            standard       <unset>                 23h
+postgres-pvc   Bound    pvc-efa4a2a4-7ff3-4814-bb65-ac962c68ca7e   1Gi        RWO            standard       <unset>                 23h

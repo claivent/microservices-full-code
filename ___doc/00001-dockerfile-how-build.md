@@ -3,7 +3,7 @@ mvn -N io.takari:maven:wrapper
 claivent/micro:config-server-0.1.1       
       
 ```shell
-docker build -t claivent/micro:config-server-0.1.1  .
+docker build -t claivent/micro:config-server-0.1.10  .
 docker push claivent/micro:config-server-0.1.1
 docker build -t claivent/micro:discovery-service-0.1.1  .
 docker push claivent/micro:discovery-service-0.1.1
@@ -16,7 +16,6 @@ docker build --no-cache -t claivent/micro:config-server-0.1.1  .
 docker build --no-cache -t claivent/micro:discovery-service-0.1.1  .
 docker build --no-cache -t claivent/micro:product-service-0.1.1  .
 docker build --no-cache -t claivent/micro:customer-service-0.1.1  .
-docker build --no-cache -t claivent/micro:payment-service-0.1.1  .
 docker build --no-cache -t claivent/micro:order-service-0.1.1  .
 docker build --no-cache -t claivent/micro:notification-service-0.1.1  .
 docker build --no-cache -t claivent/micro:gateway-service-0.1.1  .

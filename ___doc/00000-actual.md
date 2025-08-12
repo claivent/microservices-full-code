@@ -22,6 +22,29 @@ kubectl rollout restart -n default deployment customer-service
 kubectl rollout restart -n default deployment notification-service
 kubectl rollout restart -n default deployment gateway-service
 
+kubectl apply -f ~/IdeaProjects/microservices-full-code/services/config-server/
+kubectl apply -f ~/IdeaProjects/microservices-full-code/services/discovery/
+
+kubectl apply -f ~/IdeaProjects/microservices-full-code/services/config-server/
+kubectl apply -f ~/IdeaProjects/microservices-full-code/services/customer/
+kubectl apply -f ~/IdeaProjects/microservices-full-code/services/gateway/
+kubectl apply -f ~/IdeaProjects/microservices-full-code/services/notification/
+kubectl apply -f ~/IdeaProjects/microservices-full-code/services/order/
+kubectl apply -f ~/IdeaProjects/microservices-full-code/services/payment/
+kubectl apply -f ~/IdeaProjects/microservices-full-code/services/product/
+
+kubectl delete -f ~/IdeaProjects/microservices-full-code/services/config-server/
+kubectl delete -f ~/IdeaProjects/microservices-full-code/services/customer/
+kubectl delete -f ~/IdeaProjects/microservices-full-code/services/gateway/
+kubectl delete -f ~/IdeaProjects/microservices-full-code/services/notification/
+kubectl delete -f ~/IdeaProjects/microservices-full-code/services/order/
+kubectl delete -f ~/IdeaProjects/microservices-full-code/services/payment/
+kubectl delete -f ~/IdeaProjects/microservices-full-code/services/product/
+
+
+
+
+
 curl http://gateway-service:8222/actuator/env | grep zipkin
 
 kubectl create -f 'https://strimzi.io/install/latest?namespace=dev' 
