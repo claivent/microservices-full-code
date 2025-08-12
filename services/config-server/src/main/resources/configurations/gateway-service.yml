@@ -8,36 +8,48 @@ spring:
           discovery:
             locator:
               enabled: true
-      routes:
-        - id: customer-service
-          uri: lb://CUSTOMER-SERVICE
-          predicates:
-            - Path=/api/v1/customers/**
-          filters:
-            - RewritePath=/api/v1/customers(?<remaining>/?.*), /api/v1/customers${remaining}
-        - id: order-service
-          uri: lb://ORDER-SERVICE
-          predicates:
-            - Path=/api/v1/orders/**
-          filters:
-            - RewritePath=/api/v1/orders(?<remaining>/?.*), /api/v1/orders${remaining}
-        - id: order-lines-service
-          uri: lb://ORDER-SERVICE
-          predicates:
-            - Path=/api/v1/order-lines/**
-        - id: product-service
-          uri: lb://PRODUCT-SERVICE
-          predicates:
-            - Path=/api/v1/products/**
-          filters:
-            - RewritePath=/api/v1/products(?<remaining>/?.*), /api/v1/products${remaining}
+          routes:
+            - id: customer-service
+              uri: lb://CUSTOMER-SERVICE
+              predicates:
+                 - Path=/api/v1/customers/**
+              filters:
+                - name: RewritePath
+                  args:
+                    regexp: /api/v1/customers(?<remaining>/?.*)
+                    replacement: /api/v1/customers${remaining}
+            - id: order-service
+              uri: lb://ORDER-SERVICE
+              predicates:
+                - Path=/api/v1/orders/**
+              filters:
+                - name: RewritePath
+                  args:
+                    regexp: /api/v1/orders(?<remaining>/?.*)
+                    replacement: /api/v1/orders{remaining}
+            - id: order-lines-service
+              uri: lb://ORDER-SERVICE
+              predicates:
+                - Path=/api/v1/order-lines/**
+            - id: product-service
+              uri: lb://PRODUCT-SERVICE
+              predicates:
+                - Path=/api/v1/products/**
+              filters:
+                - name: RewritePath
+                  args:
+                    regexp: /api/v1/products(?<remaining>/?.*)
+                    replacement: /api/v1/products{remaining}
 
-        - id: payment-service
-          uri: lb://PAYMENT-SERVICE
-          predicates:
-            - Path=/api/v1/payments/**
-          filters:
-            - RewritePath=/api/v1/payments(?<remaining>/?.*), /api/v1/payments${remaining}
+            - id: payment-service
+              uri: lb://PAYMENT-SERVICE
+              predicates:
+                - Path=/api/v1/payments/**
+              filters:
+                - name: RewritePath
+                  args:
+                    regexp: /api/v1/payments(?<remaining>/?.*)
+                    replacement: /api/v1/payments{remaining}
 
 eureka:
   client:
