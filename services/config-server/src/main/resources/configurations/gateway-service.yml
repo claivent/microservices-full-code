@@ -3,9 +3,11 @@ server:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
       routes:
         - id: customer-service
           uri: lb://CUSTOMER-SERVICE
