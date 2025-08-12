@@ -7,8 +7,9 @@ spec:
     app: customer-service
   ports:
     - name: http
+      nodePort: 30090
       protocol: TCP
       port: 8090
       targetPort: 8090
-  type: ClusterIP
+  type: NodePort
   
