@@ -3,6 +3,7 @@ source ~/.bashrc
 
 
 alias cp1='incus exec cp1 -- bash'  
+alias cp2='incus exec cp2 -- bash'
 alias w1='incus exec w1 -- bash'  
 alias w2='incus exec w2 -- bash'  
 
