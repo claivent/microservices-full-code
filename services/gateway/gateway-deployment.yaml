@@ -20,7 +20,7 @@ spec:
       containers:
         - name: gateway-service
 
-          image: claivent/micro:gateway-service-0.1.4
+          image: claivent/micro:gateway-service-0.1.10
           imagePullPolicy: Always
           ports:
             - containerPort: 8222
