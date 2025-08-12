@@ -3,8 +3,11 @@ kind: Service
 metadata:
   name: mongo-express
 spec:
+  type: NodePort
   ports:
-  - port: 8150
+  - name: mongo-express-svc
+    nodePort: 30083
+    port: 8150
     protocol: TCP
     targetPort: 8081
   selector:
