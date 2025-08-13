@@ -9,3 +9,7 @@ spring:
 
   application:
     name: discovery-service
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG

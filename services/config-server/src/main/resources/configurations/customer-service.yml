@@ -9,9 +9,22 @@ spring:
       port: 27017
       database: customer
       authentication-database: admin
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
 eureka:
   instance:
-    prefer-ip-address: true
+    # secure-port-enabled: false
+    # secure-port: 443
+    prefer-ip-address: false
+    hostname: customer.claivent.website
+    non-secure-port: 2052
+    non-secure-port-enabled: true
+    home-page-url:    http://customer.claivent.website:2052/
+    status-page-url:  http://customer.claivent.website:2052/actuator
+    health-check-url: http://customer.claivent.website:2052/actuator/health
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 management:
