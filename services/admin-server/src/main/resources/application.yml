@@ -1,0 +1,12 @@
+server:
+  port: 8899
+spring:
+  profiles:
+    active: native
+  application:
+    name: admin-server
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configurations
