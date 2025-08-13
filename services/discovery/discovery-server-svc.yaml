@@ -9,7 +9,8 @@ spec:
     app: discovery-service
   ports:
     - name: http
+      nodePort: 30091
       protocol: TCP
       port: 8761
       targetPort: 8761
-  type: ClusterIP
+  type: NodePort
