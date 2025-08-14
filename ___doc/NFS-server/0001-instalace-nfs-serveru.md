@@ -84,6 +84,7 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  storageClassName: ""    
 ---
 ``` 
 
