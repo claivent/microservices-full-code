@@ -3,9 +3,12 @@ kind: Service
 metadata:
   name: pgadmin
 spec:
+  type: NodePort
   ports:
   - port: 8190
     protocol: TCP
     targetPort: 80
+    nodePort: 30093
+
   selector:
     app: pgadmin
