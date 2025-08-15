@@ -3,11 +3,11 @@ server:
 spring:
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: false
       server:
         webflux:
-          discovery:
-            locator:
-              enabled: true
           routes:
             - id: customer-service
               uri: lb://CUSTOMER-SERVICE
@@ -26,7 +26,7 @@ spring:
                 - name: RewritePath
                   args:
                     regexp: /api/v1/orders(?<remaining>/?.*)
-                    replacement: /api/v1/orders{remaining}
+                    replacement: /api/v1/orders${remaining}
             - id: order-lines-service
               uri: lb://ORDER-SERVICE
               predicates:
@@ -39,7 +39,7 @@ spring:
                 - name: RewritePath
                   args:
                     regexp: /api/v1/products(?<remaining>/?.*)
-                    replacement: /api/v1/products{remaining}
+                    replacement: /api/v1/products${remaining}
 
             - id: payment-service
               uri: lb://PAYMENT-SERVICE
@@ -49,7 +49,7 @@ spring:
                 - name: RewritePath
                   args:
                     regexp: /api/v1/payments(?<remaining>/?.*)
-                    replacement: /api/v1/payments{remaining}
+                    replacement: /api/v1/payments${remaining}
 
 eureka:
   client:
@@ -74,6 +74,22 @@ management:
       # URL služby Zipkin v K8s (název služby v default namespace)
       base-url: http://zipkin:9411
       endpoint: http://zipkin:9411/api/v2/spans
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor:
+      netty:
+        http:
+          client: DEBUG
+  cloud:
+    gateway:
+      httpserver:
+        wiretap=true:
+
+      httpclient:
+        wiretap=true:
+
 
 
 
