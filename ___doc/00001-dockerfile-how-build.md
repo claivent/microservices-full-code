@@ -1,7 +1,35 @@
 mvn -N io.takari:maven:wrapper
 
 claivent/micro:config-server-0.1.1       
-      
+
+sudo apt install docker-buildx  
+# Zkontrolujte, že buildx je k dispozici  
+docker buildx version  
+
+# Vytvořte builder (pokud ještě nemáte)  
+docker buildx create --name mybuilder --use  
+
+# Inicializace builderu  
+docker buildx inspect --bootstrap  
+
+```shell
+# první build založí cache
+docker buildx build \
+  --cache-to=type=local,dest=.buildx-cache \
+  --cache-from=type=local,src=.buildx-cache \
+  -t claivent/micro:config-server-0.1.10 \
+  --push .
+```
+
+```shell
+# první build založí cache
+docker buildx build \
+  --cache-to=type=local,dest=.buildx-cache \
+  --cache-from=type=local,src=.buildx-cache \
+  -t claivent/micro:gateway-service-0.1.10 \
+  --push .
+```
+     
 ```shell
 docker build -t claivent/micro:config-server-0.1.10  .
 docker push claivent/micro:config-server-0.1.1
@@ -29,6 +57,7 @@ docker push claivent/micro:customer-service-0.1.1
 docker push claivent/micro:payment-service-0.1.1
 docker push claivent/micro:notification-service-0.1.1
 docker push claivent/micro:gateway-service-0.1.1
+
 
 
 ```   
