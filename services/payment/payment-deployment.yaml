@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: payment-service
-          image: claivent/micro:payment-service-0.1.1
+          image: claivent/micro:payment-service-0.1.10
           imagePullPolicy: Always
           ports:
             - containerPort: 8060
