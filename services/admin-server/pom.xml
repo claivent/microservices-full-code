@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.1</version>
+		<version>3.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.alibou</groupId>
@@ -28,7 +28,9 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
-	</properties>
+		<spring-boot.version>3.5.4</spring-boot.version>
+		<spring-cloud.version>2025.0.0</spring-cloud.version>
+	</properties>>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
