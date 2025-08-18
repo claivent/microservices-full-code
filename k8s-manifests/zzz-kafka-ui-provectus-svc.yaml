@@ -4,10 +4,11 @@ metadata:
   name: kafka-ui
   #namespace: dev
 spec:
+  type: NodePort
   selector:
     app: kafka-ui
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
-  type: ClusterIP
+      nodePort: 30094
