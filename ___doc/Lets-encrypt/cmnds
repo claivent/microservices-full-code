@@ -1,0 +1,5 @@
+
+
+ 4843  sudo vim haproxy.cfg
+ 4844  sudo haproxy -c -f /etc/haproxy/haproxy.cfg
+ 4845  sudo systemctl restart haproxy.service
