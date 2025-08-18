@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: notification-service
-          image: claivent/micro:notification-service-0.1.1
+          image: claivent/micro:notification-service-0.1.10
           imagePullPolicy: Always
           ports:
             - containerPort: 8040
