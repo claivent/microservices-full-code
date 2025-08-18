@@ -14,18 +14,23 @@ spring:
 #    prefer-ip-address: true
 #    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
+#eureka:
+#  instance:
+#    # secure-port-enabled: false
+#    # secure-port: 443
+#    prefer-ip-address: true
+#    ip-address: ${POD_IP}
+#    #hostname: customer.claivent.website
+#    non-secure-port: ${server.port}
+#    non-secure-port-enabled: true
+#    home-page-url:    /
+#    status-page-url:  http://${POD_IP}:${server.port}/actuator
+#    health-check-url: http://${POD_IP}:${server.port}/actuator/health
+#    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
 eureka:
   instance:
-    # secure-port-enabled: false
-    # secure-port: 443
     prefer-ip-address: true
-    ip-address: ${POD_IP}
-    #hostname: customer.claivent.website
-    non-secure-port: ${server.port}
-    non-secure-port-enabled: true
-    home-page-url:    /
-    status-page-url:  http://${POD_IP}:${server.port}/actuator
-    health-check-url: http://${POD_IP}:${server.port}/actuator/health
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 management:

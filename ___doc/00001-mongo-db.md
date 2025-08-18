@@ -21,4 +21,4 @@ customer
 
 
 
-kubectl exec -it mongo-db-54b56f9667-k8wrw -- mongosh "mongodb://alibou:alibou@localhost:27017/admin" --eval 'db.changeUserPassword("alibou", "alibou")'
+kubectl exec -it mongo-debug -- mongosh "mongodb://alibou:alibou@mongo-db:27017/admin" --eval 'db.changeUserPassword("alibou", "alibou")'
