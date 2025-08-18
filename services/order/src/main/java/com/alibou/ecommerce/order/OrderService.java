@@ -32,6 +32,7 @@ public class OrderService {
 
     @Transactional
     public Integer createOrder(OrderRequest request) {
+
         var customer = this.customerClient.findCustomerById(request.customerId())
                 .orElseThrow(() -> new BusinessException("Cannot create order:: No customer exists with the provided ID"));
 
