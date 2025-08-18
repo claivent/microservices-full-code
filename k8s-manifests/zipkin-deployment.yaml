@@ -13,8 +13,16 @@ spec:
         app: zipkin
     spec:
       containers:
-      - image: openzipkin/zipkin
-        imagePullPolicy: IfNotPresent
-        name: zipkin
-        ports:
-        - containerPort: 9411
+        - name: zipkin
+          image: openzipkin/zipkin
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9411
+          env:
+            # >> tohle je klíčové <<
+            - name: SERVER_SERVLET_CONTEXT_PATH
+              value: /zipkin
+            - name: ZIPKIN_UI_BASEPATH
+              value: /zipkin
+
+
