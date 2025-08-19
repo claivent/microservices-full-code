@@ -43,10 +43,10 @@ management:
       endpoint: http://zipkin.observability.svc.cluster.local:9411/api/v2/spans
 
 
-logging:
-  level:
-    root: DEBUG
-    brave:
-      propagation:
-        tracecontext:
-          Tracestate: DEBUG
+#logging:
+#  level:
+#    root: DEBUG
+#    brave:
+#      propagation:
+#        tracecontext:
+#          Tracestate: DEBUG
