@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: config-server
-          image: claivent/micro:config-server-0.1.11
+          image: claivent/micro:config-server-0.1.20
           imagePullPolicy: Always
           ports:
             - containerPort: 8888
