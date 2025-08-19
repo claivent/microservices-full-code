@@ -45,8 +45,8 @@ management:
 
 logging:
   level:
-    root: warn, info, debug,
+    root: DEBUG
     brave:
       propagation:
         tracecontext:
-          Tracestate: warn, info
+          Tracestate: DEBUG
