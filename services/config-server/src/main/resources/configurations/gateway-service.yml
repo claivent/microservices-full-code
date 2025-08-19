@@ -50,6 +50,11 @@ spring:
                   args:
                     regexp: /api/v1/payments(?<remaining>/?.*)
                     replacement: /api/v1/payments${remaining}
+#      httpserver:
+#        wiretap=true:
+#
+#      httpclient:
+#        wiretap=true:
 
 eureka:
   client:
@@ -74,20 +79,16 @@ management:
       zipkin:
         endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
 
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
-    reactor:
-      netty:
-        http:
-          client: DEBUG
-  cloud:
-    gateway:
-      httpserver:
-        wiretap=true:
+#logging:
+#  level:
+#    org.springframework.cloud.gateway: DEBUG
+#    reactor.netty.http.client: DEBUG
+#    reactor.netty.http.server: DEBUG
+#    reactor.netty.transport: DEBUG
+#    io.netty: INFO
 
-      httpclient:
-        wiretap=true:
+
+
 
 
 

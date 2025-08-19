@@ -1,32 +1,16 @@
+spring:
+  cloud:
+    config:
+      override-system-properties: false
+
+server:
+  port: 8888
+
 eureka:
   instance:
     hostname: discovery-service.default.svc.cluster.local
   client:
     service-url:
       defaultZone: http://discovery-service.default.svc.cluster.local:8761/eureka/
-name:
-  value: alibou
-spring:
-  cloud:
-    config:
-      override-system-properties: false
 
 
-
-server:
-  port: 8888
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health, info, metrics, prometheus, env
-  endpoint:
-    health:
-      show-details: always
-  tracing:
-    sampling:
-      probability: 1.0
-    export:
-      zipkin:
-        endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans

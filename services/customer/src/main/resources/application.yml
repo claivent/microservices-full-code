@@ -1,7 +1,75 @@
+#spring:
+
+
+
+server:
+  port: 8090
 spring:
+  data:
+    mongodb:
+      username: alibou
+      password: alibou
+      host: mongo-db.default.svc.cluster.local
+      port: 27017
+      database: customer
+      authentication-database: admin
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+#eureka:
+#  instance:
+#    # secure-port-enabled: false
+#    # secure-port: 443
+#    prefer-ip-address: true
+#    ip-address: ${POD_IP}
+#    #hostname: customer.claivent.website
+#    non-secure-port: ${server.port}
+#    non-secure-port-enabled: true
+#    home-page-url:    /
+#    status-page-url:  http://${POD_IP}:${server.port}/actuator
+#    health-check-url: http://${POD_IP}:${server.port}/actuator/health
+#    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health, info, metrics, prometheus, env
+#  endpoint:
+#    health:
+#      show-details: always
+#  tracing:
+#    sampling:
+#      probability: 1.0
+#    export:
+#      zipkin:
+#        endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
+
+
+
   config:
     #import: optional:configserver:http://localhost:8888
     import: optional:configserver:http://config-server.default.svc.cluster.local:8888
   application:
     name: customer-service
-
