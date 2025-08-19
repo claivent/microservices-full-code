@@ -4,9 +4,13 @@ pipeline {
   tools { maven 'maven3' }
 
   environment {
-		MODULE_POM = 'services/config-server/pom.xml'
+		MODULE_POM   = 'services/config-server/pom.xml'
     TEST_REPORTS = 'services/config-server/**/target/surefire-reports/*.xml'
-    ARTIFACTS = 'services/config-server/target/*.jar'
+    ARTIFACTS    = 'services/config-server/target/*.jar'
+
+    DOCKER_REGISTRY = 'docker.io'          // host pro login
+    DOCKER_REPO     = 'claivent/micro'     // repo na Docker Hubu
+    IMAGE_TAG       = 'config-server-0.1.20' // cílový tag
   }
 
   stages {
@@ -15,7 +19,6 @@ pipeline {
 				checkout scm
         sh 'pwd && ls -la && find . -maxdepth 3 -name pom.xml -print'
         sh "test -f ${MODULE_POM} || (echo '❌ ${MODULE_POM} not found' && exit 1)"
-        sh 'git rev-parse --short HEAD'
       }
     }
 
@@ -28,6 +31,34 @@ pipeline {
     stage('Package') {
 			steps {
 				sh "mvn -B -U -f ${MODULE_POM} -DskipTests package"
+      }
+    }
+
+    stage('Docker Sanity') {
+			steps {
+				sh 'docker version'
+        sh 'docker info | head -n 20 || true'
+      }
+    }
+
+    stage('Build Image') {
+			steps {
+				dir('services/config-server') {
+					sh """
+            docker build -t ${DOCKER_REPO}:${IMAGE_TAG} .
+          """
+        }
+      }
+    }
+
+    stage('Push Image') {
+			steps {
+				withCredentials([usernamePassword(credentialsId: 'dockerhub-cred', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+					sh """
+            echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin ${DOCKER_REGISTRY}
+            docker push ${DOCKER_REPO}:${IMAGE_TAG}
+          """
+        }
       }
     }
   }

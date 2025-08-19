@@ -1,5 +1,18 @@
-target/
-.git/
+# Git & IDE
+.git
 .gitignore
-Dockerfile
+.idea
+.vscode
+**/*.iml
+
+# OS/temporary
+**/.DS_Store
+**/*.log
+**/*.swp
+**/*.tmp
+
+# Repo věci, co nepotřebuje image
 README.md
+docker-compose*.yml
+k8s*/
+scripts/
