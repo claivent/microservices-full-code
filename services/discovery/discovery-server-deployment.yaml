@@ -23,9 +23,9 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8761
-          env:
-            - name: SPRING_CONFIG_IMPORT
-              #value: "optional:configserver:http://localhost:8888,optional:configserver:http://config-server.default.svc.cluster.local:8888"
-              value: "optional:configserver:http://config-server.default.svc.cluster.local:8888"
+#          env:
+#            - name: SPRING_CONFIG_IMPORT
+#              #value: "optional:configserver:http://localhost:8888,optional:configserver:http://config-server.default.svc.cluster.local:8888"
+#              value: "optional:configserver:http://config-server.default.svc.cluster.local:8888"
 
 ---
