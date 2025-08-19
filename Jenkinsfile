@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build & Test') {
       steps {
-        sh 'mvn -B -U clean verify'           // žádné -pl, žádná cesta
+        sh 'mvn -B -U clean verify'
       }
       post {
         always {
