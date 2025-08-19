@@ -12,3 +12,6 @@ spring:
 name:
   value: alibou
 
+server:
+  port: 8888
+
