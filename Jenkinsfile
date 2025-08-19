@@ -4,7 +4,14 @@ pipeline {
   tools { maven 'maven3' }
 
   stages {
-    stage('Checkout') { steps { checkout scm } }
+    stage('Checkout') {
+		steps {
+		checkout scm
+        sh 'pwd && ls -la'
+        sh 'test -f pom.xml || (echo "❌ pom.xml not found in $(pwd)" && exit 1)'
+
+      }
+    }
 
     stage('Diag') {
       steps {
@@ -19,7 +26,8 @@ pipeline {
       }
       post {
         always {
-          junit 'target/surefire-reports/*.xml'
+			// Když build spadne před testy, ať to nekřičí druhou chybou
+      		junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true
         }
       }
     }
