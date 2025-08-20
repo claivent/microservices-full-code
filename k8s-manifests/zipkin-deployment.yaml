@@ -21,3 +21,18 @@ spec:
               value: /zipkin
             - name: ZIPKIN_UI_BASEPATH
               value: /zipkin
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: zipkin
+spec:
+  type: NodePort
+  ports:
+    - port: 9411
+      protocol: TCP
+      targetPort: 9411
+      nodePort: 30095
+  selector:
+    app: zipkin
