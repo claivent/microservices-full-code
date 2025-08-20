@@ -23,4 +23,6 @@ eureka:
     service-url:
       defaultZone: http://discovery-service.default.svc.cluster.local:8761/eureka/
 
-
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},traceId=%mdc{traceId:-},spanId=%mdc{spanId:-}]"
