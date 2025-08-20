@@ -2,47 +2,36 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: zipkin
-  namespace: observability
+  namespace: default
 spec:
   replicas: 1
   selector:
-    matchLabels:
-      app: zipkin
+    matchLabels: { app: zipkin }
   template:
     metadata:
-      labels:
-        app: zipkin
+      labels: { app: zipkin }
     spec:
       containers:
         - name: zipkin
-          image: openzipkin/zipkin:latest
+          image: openzipkin/zipkin:3.4
           ports:
             - containerPort: 9411
           env:
+            - name: SERVER_SERVLET_CONTEXT_PATH
+              value: /zipkin
+            - name: ZIPKIN_UI_BASEPATH
+              value: /zipkin
             - name: STORAGE_TYPE
-              value: elasticsearch
-            - name: ES_HOSTS
-              value: http://elasticsearch-master.observability.svc.cluster.local:9200
-            - name: JAVA_OPTS
-              value: "-Xms512m -Xmx512m"
-          resources:
-            requests:
-              cpu: 100m
-              memory: 512Mi
-            limits:
-              memory: 1Gi
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: zipkin
-  namespace: observability
-spec:
-  type: NodePort
-  selector:
-    app: zipkin
-  ports:
-    - protocol: TCP
-      port: 9411
-      targetPort: 9411
-      nodePort: 30095
+              value: postgres
+            - name: POSTGRES_HOST
+              value: postgres.default.svc.cluster.local
+            - name: POSTGRES_DB
+              value: zipkin
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef: { name: zipkin-postgres, key: username }
+            - name: POSTGRES_PASS
+              valueFrom:
+                secretKeyRef: { name: zipkin-postgres, key: password }
+
+
