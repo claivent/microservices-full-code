@@ -50,3 +50,11 @@ management:
 #      propagation:
 #        tracecontext:
 #          Tracestate: DEBUG
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.cloud.sleuth: DEBUG
+    org.springframework.boot.actuate.autoconfigure.tracing: DEBUG
+    io.micrometer.tracing: DEBUG
+    zipkin2.reporter: DEBUG
