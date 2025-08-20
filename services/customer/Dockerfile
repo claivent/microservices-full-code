@@ -1,14 +1,13 @@
-FROM eclipse-temurin:17-jdk
-
+# Dockerfile
+FROM amazoncorretto:17-alpine
 WORKDIR /app
 
-COPY mvnw .
-COPY .mvn .mvn
-COPY pom.xml .
-COPY src src
+# JAR vyrobí CI (mvn package); vezmeme ho z target/
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
 
-RUN chmod +x ./mvnw && ./mvnw clean package -DskipTests
-
+# volitelné JVM flags (nastavitelné přes -e JAVA_OPTS="...")
+ENV JAVA_OPTS=""
 EXPOSE 8090
 
-CMD ["java", "-jar", "target/customer-0.1.1.jar"]
+ENTRYPOINT ["sh","-c","java $JAVA_OPTS -jar /app/app.jar"]

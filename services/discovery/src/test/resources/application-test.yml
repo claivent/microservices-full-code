@@ -1,0 +1,47 @@
+spring:
+  config:
+    import: optional:configserver:http://config-server.default.svc.cluster.local:8888
+  application:
+    name: discovery-service
+  profiles:
+    active: native
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
