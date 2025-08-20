@@ -1,0 +1,72 @@
+pipeline {
+	agent any
+  options { timestamps(); disableConcurrentBuilds(); skipDefaultCheckout(true) }
+  tools { maven 'maven3' }
+
+  environment {
+		MODULE_POM   = 'services/customer-service/pom.xml'
+    TEST_REPORTS = 'services/customer-service/**/target/surefire-reports/*.xml'
+    ARTIFACTS    = 'services/customer-service/target/*.jar'
+
+    DOCKER_REGISTRY = 'docker.io'          // host pro login
+    DOCKER_REPO     = 'claivent/micro'     // repo na Docker Hubu
+    IMAGE_TAG       = 'customer-service-0.1.20' // cílový tag
+  }
+
+  stages {
+		stage('Checkout') {
+			steps {
+				checkout scm
+        sh 'pwd && ls -la && find . -maxdepth 3 -name pom.xml -print'
+        sh "test -f ${MODULE_POM} || (echo '❌ ${MODULE_POM} not found' && exit 1)"
+      }
+    }
+
+    stage('Build & Test') {
+			steps {
+				sh "mvn -B -U -f ${MODULE_POM} clean verify"
+      }
+    }
+
+    stage('Package') {
+			steps {
+				sh "mvn -B -U -f ${MODULE_POM} -DskipTests package"
+      }
+    }
+
+    stage('Docker Sanity') {
+			steps {
+				sh 'docker version'
+        sh 'docker info | head -n 20 || true'
+      }
+    }
+
+    stage('Build Image') {
+			steps {
+				dir('services/config-server') {
+					sh """
+            docker build -t ${DOCKER_REPO}:${IMAGE_TAG} .
+          """
+        }
+      }
+    }
+
+    stage('Push Image') {
+			steps {
+				withCredentials([usernamePassword(credentialsId: 'dockerhub-cred', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+					sh """
+            echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin ${DOCKER_REGISTRY}
+            docker push ${DOCKER_REPO}:${IMAGE_TAG}
+          """
+        }
+      }
+    }
+  }
+
+  post {
+		always {
+			junit testResults: "${TEST_REPORTS}", allowEmptyResults: true
+      archiveArtifacts artifacts: "${ARTIFACTS}", fingerprint: true, onlyIfSuccessful: true
+    }
+  }
+}
