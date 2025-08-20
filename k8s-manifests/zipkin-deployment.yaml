@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: zipkin
-  namespace: observability
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -21,17 +21,3 @@ spec:
               value: /zipkin
             - name: ZIPKIN_UI_BASEPATH
               value: /zipkin
-            - name: STORAGE_TYPE
-              value: postgres
-            - name: POSTGRES_HOST
-              value: postgres.default.svc.cluster.local
-            - name: POSTGRES_DB
-              value: zipkin
-            - name: POSTGRES_USER
-              valueFrom:
-                secretKeyRef: { name: zipkin-postgres, key: username }
-            - name: POSTGRES_PASS
-              valueFrom:
-                secretKeyRef: { name: zipkin-postgres, key: password }
-
-
