@@ -25,7 +25,7 @@ management:
   #      probability: 1.0
   #    export:
   #      zipkin:
-  #        endpoint: http://zipkin.observability.svc.cluster.local:9411/api/v2/spans
+  #        endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
 
   endpoints:
     web:
@@ -40,7 +40,7 @@ management:
       probability: 0.1
   zipkin:
     tracing:
-      endpoint: http://zipkin.observability.svc.cluster.local:9411/api/v2/spans
+      endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
 
 
 #logging:
