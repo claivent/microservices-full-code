@@ -1,14 +1,8 @@
 spring:
-  profiles:
-    active: native
-  application:
-    name: config-server
   cloud:
     config:
       override-system-properties: false
-      server:
-        native:
-          search-locations: classpath:/configurations
+
 
 name:
   value: alibou
