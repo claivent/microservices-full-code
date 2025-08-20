@@ -43,7 +43,7 @@ pipeline {
 
     stage('Build Image') {
 			steps {
-				dir('services/config-server') {
+				dir('services/customer') {
 					sh """
             docker build -t ${DOCKER_REPO}:${IMAGE_TAG} .
           """
