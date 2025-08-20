@@ -4,9 +4,9 @@ pipeline {
   tools { maven 'maven3' }
 
   environment {
-		MODULE_POM   = 'services/customer-service/pom.xml'
-    TEST_REPORTS = 'services/customer-service/**/target/surefire-reports/*.xml'
-    ARTIFACTS    = 'services/customer-service/target/*.jar'
+		MODULE_POM   = 'services/customer/pom.xml'
+    TEST_REPORTS = 'services/customer/**/target/surefire-reports/*.xml'
+    ARTIFACTS    = 'services/customer/target/*.jar'
 
     DOCKER_REGISTRY = 'docker.io'          // host pro login
     DOCKER_REPO     = 'claivent/micro'     // repo na Docker Hubu
