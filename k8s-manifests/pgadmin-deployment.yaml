@@ -28,7 +28,7 @@ spec:
         - name: PGADMIN_CONFIG_SERVER_MODE
           value: 'False'
         image: dpage/pgadmin4
-        imagePullPolicy: always
+        imagePullPolicy: Always
         name: pgadmin
         ports:
         - containerPort: 80
