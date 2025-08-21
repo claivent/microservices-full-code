@@ -50,11 +50,6 @@ spring:
                   args:
                     regexp: /api/v1/payments(?<remaining>/?.*)
                     replacement: /api/v1/payments${remaining}
-#      httpserver:
-#        wiretap=true:
-#
-#      httpclient:
-#        wiretap=true:
 
 eureka:
   client:
@@ -72,12 +67,19 @@ management:
   endpoint:
     health:
       show-details: always
+
   tracing:
     sampling:
-      probability: 1.0
-    export:
-      zipkin:
-        endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
+      probability: 0.1
+  zipkin:
+    tracing:
+      endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
+
+management.observations:
+  http:
+    server:
+      requests:
+        name: http.server.requests
 
 #logging:
 #  level:
