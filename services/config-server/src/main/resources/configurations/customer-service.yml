@@ -27,27 +27,7 @@ eureka:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health, info, metrics, prometheus, env
-  endpoint:
-    health:
-      show-details: always
 
-  tracing:
-    sampling:
-      probability: 1.0
-    propagation:
-      type: [ B3, W3C ]
-  zipkin:
-    tracing:
-      endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
-
-logging:
-  pattern:
-    level: "%5p [${spring.application.name},traceId=%mdc{traceId:-},spanId=%mdc{spanId:-}]"
 
 
 #eureka:
