@@ -25,7 +25,7 @@ management:
 
   tracing:
     sampling:
-      probability: 0.1
+      probability: 1.0
   zipkin:
     tracing:
       endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans

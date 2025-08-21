@@ -70,7 +70,7 @@ management:
 
   tracing:
     sampling:
-      probability: 0.1
+      probability: 1.0
   zipkin:
     tracing:
       endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
@@ -81,6 +81,10 @@ management.observations:
       requests:
         name: http.server.requests
 
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},traceId=%mdc{traceId:-},spanId=%mdc{spanId:-}]"
 #logging:
 #  level:
 #    org.springframework.cloud.gateway: DEBUG
