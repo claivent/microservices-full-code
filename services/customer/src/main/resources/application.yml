@@ -15,6 +15,7 @@ management:
       show-details: always
 
   tracing:
+    enabled: true
     sampling:
       probability: 1.0
     propagation:
