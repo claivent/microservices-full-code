@@ -1,5 +1,6 @@
 server:
   port: 8090
+
 spring:
   data:
     mongodb:
@@ -9,6 +10,29 @@ spring:
       port: 27017
       database: customer
       authentication-database: admin
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    appname: unknown
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus, env
+  endpoint:
+    health:
+      show-details: always
+
+  tracing:
+    sampling:
+      probability: 0.1
+  zipkin:
+    tracing:
+      endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
+
 #eureka:
 #  instance:
 #    prefer-ip-address: true
@@ -27,23 +51,3 @@ spring:
 #    status-page-url:  http://${POD_IP}:${server.port}/actuator
 #    health-check-url: http://${POD_IP}:${server.port}/actuator/health
 #    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-
-eureka:
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health, info, metrics, prometheus, env
-  endpoint:
-    health:
-      show-details: always
-  tracing:
-    sampling:
-      probability: 1.0
-    export:
-      zipkin:
-        endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans

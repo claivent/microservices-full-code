@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: customer-service
-          image: claivent/micro:customer-service-0.1.11
+          image: claivent/micro:customer-service-0.1.20
           imagePullPolicy: Always
           ports:
             - containerPort: 8090

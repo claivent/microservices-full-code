@@ -21,17 +21,18 @@ spec:
               value: /zipkin
             - name: ZIPKIN_UI_BASEPATH
               value: /zipkin
-            - name: STORAGE_TYPE
-              value: postgres
-            - name: POSTGRES_HOST
-              value: postgres.default.svc.cluster.local
-            - name: POSTGRES_DB
-              value: zipkin
-            - name: POSTGRES_USER
-              valueFrom:
-                secretKeyRef: { name: zipkin-postgres, key: username }
-            - name: POSTGRES_PASS
-              valueFrom:
-                secretKeyRef: { name: zipkin-postgres, key: password }
+---
 
-
+apiVersion: v1
+kind: Service
+metadata:
+  name: zipkin
+spec:
+  type: NodePort
+  ports:
+    - port: 9411
+      protocol: TCP
+      targetPort: 9411
+      nodePort: 30095
+  selector:
+    app: zipkin
