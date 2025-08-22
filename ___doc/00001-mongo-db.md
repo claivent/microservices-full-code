@@ -1,3 +1,15 @@
+
+use test
+db.createUser(
+{
+user: "alibou",
+pwd:  passwordPrompt(),   // or cleartext password
+roles: [ { role: "readWrite", db: "customer" },
+{ role: "read", db: "test" } ]
+}
+)
+
+
 kubectl run -it mongo-debug --image=mongo --bash
 mongosh "mongodb://alibou:alibou@localhost:27017/admin"
 
