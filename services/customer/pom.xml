@@ -76,6 +76,16 @@
 			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
 
+        <!-- Micrometer Tracing + Zipkin export (nutné) -->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-brave</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-reporter-brave</artifactId>
+        </dependency>
+
 		<!-- (optional) Validation, if you use -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

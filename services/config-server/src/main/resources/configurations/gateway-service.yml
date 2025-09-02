@@ -3,58 +3,53 @@ server:
 spring:
   cloud:
     gateway:
+      observations:
+        enabled: true
       discovery:
         locator:
           enabled: false
-      server:
-        webflux:
-          routes:
-            - id: customer-service
-              uri: lb://CUSTOMER-SERVICE
-              predicates:
-                 - Path=/api/v1/customers/**
-              filters:
-                - name: RewritePath
-                  args:
-                    regexp: /api/v1/customers(?<remaining>/?.*)
-                    replacement: /api/v1/customers${remaining}
-            - id: order-service
-              uri: lb://ORDER-SERVICE
-              predicates:
-                - Path=/api/v1/orders/**
-              filters:
-                - name: RewritePath
-                  args:
-                    regexp: /api/v1/orders(?<remaining>/?.*)
-                    replacement: /api/v1/orders${remaining}
-            - id: order-lines-service
-              uri: lb://ORDER-SERVICE
-              predicates:
-                - Path=/api/v1/order-lines/**
-            - id: product-service
-              uri: lb://PRODUCT-SERVICE
-              predicates:
-                - Path=/api/v1/products/**
-              filters:
-                - name: RewritePath
-                  args:
-                    regexp: /api/v1/products(?<remaining>/?.*)
-                    replacement: /api/v1/products${remaining}
+      routes:
+        - id: customer-service
+          uri: lb://CUSTOMER-SERVICE
+          predicates:
+            - Path=/api/v1/customers/**
+        #          filters:
+        #            - name: RewritePath
+        #              args:
+        #                regexp: /api/v1/customers(?<remaining>/?.*)
+        #                replacement: /api/v1/customers${remaining}
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/api/v1/orders/**
+          filters:
+            - name: RewritePath
+              args:
+                regexp: /api/v1/orders(?<remaining>/?.*)
+                replacement: /api/v1/orders${remaining}
+        - id: order-lines-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/api/v1/order-lines/**
+        - id: product-service
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/api/v1/products/**
+          filters:
+            - name: RewritePath
+              args:
+                regexp: /api/v1/products(?<remaining>/?.*)
+                replacement: /api/v1/products${remaining}
 
-            - id: payment-service
-              uri: lb://PAYMENT-SERVICE
-              predicates:
-                - Path=/api/v1/payments/**
-              filters:
-                - name: RewritePath
-                  args:
-                    regexp: /api/v1/payments(?<remaining>/?.*)
-                    replacement: /api/v1/payments${remaining}
-#      httpserver:
-#        wiretap=true:
-#
-#      httpclient:
-#        wiretap=true:
+        - id: payment-service
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/api/v1/payments/**
+          filters:
+            - name: RewritePath
+              args:
+                regexp: /api/v1/payments(?<remaining>/?.*)
+                replacement: /api/v1/payments${remaining}
 
 eureka:
   client:
@@ -72,20 +67,31 @@ management:
   endpoint:
     health:
       show-details: always
+
   tracing:
     sampling:
       probability: 1.0
-    export:
-      zipkin:
-        endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
+  zipkin:
+    tracing:
+      endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
 
-#logging:
-#  level:
-#    org.springframework.cloud.gateway: DEBUG
-#    reactor.netty.http.client: DEBUG
-#    reactor.netty.http.server: DEBUG
-#    reactor.netty.transport: DEBUG
-#    io.netty: INFO
+management.observations:
+  http:
+    server:
+      requests:
+        name: http.server.requests
+
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},traceId=%mdc{traceId:-},spanId=%mdc{spanId:-}]"
+
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+    reactor.netty.http.server: DEBUG
+    reactor.netty.transport: DEBUG
+    io.netty: INFO
 
 
 

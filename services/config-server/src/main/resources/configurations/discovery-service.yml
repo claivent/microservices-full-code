@@ -25,7 +25,7 @@ management:
 
   tracing:
     sampling:
-      probability: 0.1
+      probability: 1.0
   zipkin:
     tracing:
       endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
@@ -46,5 +46,8 @@ logging:
 #    org.springframework.boot.actuate.autoconfigure.tracing: DEBUG
 #    io.micrometer.tracing: DEBUG
 #    zipkin2.reporter: DEBUG
-  pattern:
-    level: "%5p [${spring.application.name:},traceId=%mdc{traceId:-},spanId=%mdc{spanId:-}]"
+  logging:
+    pattern:
+      console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [${spring.application.name:-},traceId=%X{traceId:-},spanId=%X{spanId:-}] [%t] %logger{36} : %msg%n"
+      # (volitelné) sjednocení LEVEL tagu, pokud ho někde používáš:
+      level: "%5p [${spring.application.name:-},traceId=%X{traceId:-},spanId=%X{spanId:-}]"

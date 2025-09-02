@@ -1,37 +1,34 @@
 server:
   port: 8090
 
+#spring:
+#  data:
+#    mongodb:
+#      username: alibou
+#      password: alibou
+#      host: mongo-db.default.svc.cluster.local
+#      port: 27017
+#      database: customer
+#      authentication-database: admin
+
 spring:
   data:
     mongodb:
-      username: alibou
-      password: alibou
-      host: mongo-db.default.svc.cluster.local
-      port: 27017
-      database: customer
-      authentication-database: admin
+      # Jednodušší a spolehlivější je použít URI:
+      uri: mongodb://alibou:alibou@mongo-db.default.svc.cluster.local:27017/customer?authSource=admin
 
 eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service.default.svc.cluster.local:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    appname: unknown
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health, info, metrics, prometheus, env
-  endpoint:
-    health:
-      show-details: always
 
-  tracing:
-    sampling:
-      probability: 0.1
-  zipkin:
-    tracing:
-      endpoint: http://zipkin.default.svc.cluster.local:9411/api/v2/spans
+
 
 #eureka:
 #  instance:
