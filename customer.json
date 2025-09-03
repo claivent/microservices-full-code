@@ -1,0 +1,11 @@
+{
+  "id": "68ac12e6585b1aa9ec09ddbe",
+  "firstname": "Martin",
+  "lastname":"Saska",
+  "email": "claivent@gmail.com",
+  "address":{
+    "street": "Spojovaci",
+    "houseNumber":"266",
+    "zipCode": "46331"
+  }
+}
